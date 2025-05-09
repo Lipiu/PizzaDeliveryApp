@@ -23,6 +23,7 @@
                 "Veggie & Mozzarella - 30 RON"
             };
 
+            Array.Sort(PizzaOptions);
             comboBoxPizzaChoice.Items.AddRange(PizzaOptions);
             comboBoxPizzaChoice.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPizzaChoice.Width = 240;
