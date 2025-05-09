@@ -16,7 +16,7 @@
                 "Pepperoni & Feta - 35 RON",
                 "Margherita - 25 RON",
                 "Diavola - 30 RON",
-                "Spicy & Meat - 40 RON",
+                "Spicy & Meaty - 40 RON",
                 "Quattro Stagioni - 30 RON",
                 "American Spicy - 35 RON",
                 "Quattro formaggi - 36 RON",
@@ -26,27 +26,18 @@
             Array.Sort(PizzaOptions);
             comboBoxPizzaChoice.Items.AddRange(PizzaOptions);
             comboBoxPizzaChoice.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxPizzaChoice.Width = 240;
+            comboBoxPizzaChoice.Width = 255;
             comboBoxPizzaChoice.MaxDropDownItems = 6;
         }
 
         private void comboBoxPizzaChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedPizza = comboBoxPizzaChoice.SelectedItem.ToString();
 
-            if (selectedPizza == null)
-            {
-                errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza. Don't you like anything?😭");
-            }
-            else
-            {
-                errorProvider1.SetError(comboBoxPizzaChoice, "");
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hey, stop clicking me!\nOrder some pizza instead🍕");
+            MessageBox.Show("Hey, stop clicking me!\nOrder some pizza instead!🍕");
         }
 
         private void checkBoxKetchup_CheckedChanged(object sender, EventArgs e)
@@ -71,6 +62,19 @@
         private void buttonOrder_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(comboBoxPizzaChoice.SelectedItem == null)
+            {
+                errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
+            }
+            else
+            {
+                errorProvider1.SetError(comboBoxPizzaChoice, "");
+                MessageBox.Show("Proceeding to checkout...");
+            }
         }
     }
 }

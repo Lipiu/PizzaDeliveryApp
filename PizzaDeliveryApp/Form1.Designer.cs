@@ -127,6 +127,7 @@
             button1.TabIndex = 7;
             button1.Text = "Go to checkout";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
