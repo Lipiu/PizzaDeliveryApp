@@ -42,7 +42,11 @@
 
         private void checkBoxKetchup_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxKetchup.Checked)
+            if (checkBoxKetchup.Checked && comboBoxPizzaChoice.SelectedItem == null)
+            {
+                errorProvider1.SetError(checkBoxKetchup, "Ketchup with no pizza? Ok weirdo.");
+            }
+            else if(checkBoxKetchup.Checked && comboBoxPizzaChoice.SelectedItem != null)
             {
                 checkBoxSpicy.Visible = true;
             }
