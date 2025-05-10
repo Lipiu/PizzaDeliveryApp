@@ -171,7 +171,7 @@ namespace PizzaDeliveryApp
 
 
             //if all fields are valid display message
-            MessageBox.Show("Order placed sucessfully!");
+            MessageBox.Show("Order placed sucessfully!\nThank you and enjoy your pizza!!");
         }
 
         private void textBoxAddress_TextChanged(object sender, EventArgs e)
