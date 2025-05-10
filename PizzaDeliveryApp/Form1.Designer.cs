@@ -64,7 +64,7 @@
             // pictureBoxPizza
             // 
             pictureBoxPizza.Image = (Image)resources.GetObject("pictureBoxPizza.Image");
-            pictureBoxPizza.Location = new Point(355, 35);
+            pictureBoxPizza.Location = new Point(295, 35);
             pictureBoxPizza.Name = "pictureBoxPizza";
             pictureBoxPizza.Size = new Size(151, 141);
             pictureBoxPizza.TabIndex = 2;
@@ -74,7 +74,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(355, 9);
+            label2.Location = new Point(299, 9);
             label2.Name = "label2";
             label2.Size = new Size(147, 23);
             label2.TabIndex = 3;
@@ -133,7 +133,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
-            ClientSize = new Size(842, 486);
+            ClientSize = new Size(784, 561);
             Controls.Add(button1);
             Controls.Add(checkBoxSpicy);
             Controls.Add(checkBoxKetchup);

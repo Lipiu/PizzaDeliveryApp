@@ -76,8 +76,10 @@
             }
             else
             {
+                Form2 checkoutForm = new Form2();
                 errorProvider1.SetError(comboBoxPizzaChoice, "");
                 MessageBox.Show("Proceeding to checkout...");
+                checkoutForm.ShowDialog();
             }
         }
     }
