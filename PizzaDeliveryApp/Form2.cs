@@ -79,7 +79,16 @@ namespace PizzaDeliveryApp
                 errorProvider1.SetError(textBoxAddress, "");
             }
 
-            //exp date, CVV
+            //validation for card payment info
+            if(checkBoxCard.Checked != true && checkBoxCash.Checked != true) //checking if the customer selected a payment method
+            {
+                errorProvider1.SetError(checkBoxCard, "Please select payment method!");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(checkBoxCard, "");
+            }
             //validating card holder
             if(string.IsNullOrEmpty(textBoxCardHolder.Text))
             {
