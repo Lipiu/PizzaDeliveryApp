@@ -44,18 +44,27 @@
 
         private void checkBoxKetchup_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxKetchup.Checked && comboBoxPizzaChoice.SelectedItem == null)
+            if (checkBoxKetchup.Checked)
             {
-                errorProvider1.SetError(checkBoxKetchup, "Ketchup with no pizza? Ok weirdo.");
-            }
-            else if(checkBoxKetchup.Checked && comboBoxPizzaChoice.SelectedItem != null)
-            {
+                checkBoxNoKetchup.Checked = false;
                 checkBoxSpicy.Visible = true;
-            }
-            else
-            {
-                checkBoxSpicy.Visible = false;
-                checkBoxSpicy.Checked = false;
+                checkBoxSpicy.Enabled = true;
+
+                if (checkBoxKetchup.Checked && comboBoxPizzaChoice.SelectedItem == null)
+                {
+                    errorProvider1.SetError(checkBoxKetchup, "Ketchup with no pizza? Ok weirdo.");
+
+                }
+                else if (checkBoxKetchup.Checked && comboBoxPizzaChoice.SelectedItem != null)
+                {
+                    checkBoxSpicy.Visible = true;
+                }
+                else
+                {
+                    checkBoxSpicy.Visible = false;
+                    checkBoxSpicy.Checked = false;
+                    checkBoxSpicy.Enabled = false;
+                }
             }
 
         }
@@ -72,7 +81,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(comboBoxPizzaChoice.SelectedItem == null)
+            if (comboBoxPizzaChoice.SelectedItem == null)
             {
                 errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
             }
@@ -82,6 +91,25 @@
                 errorProvider1.SetError(comboBoxPizzaChoice, "");
                 MessageBox.Show("Proceeding to checkout...");
                 checkoutForm.ShowDialog();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxNoKetchup.Checked)
+            {
+                checkBoxKetchup.Checked = false;
+                checkBoxSpicy.Checked = false;
+                checkBoxSpicy.Enabled = false;
+
+                if (comboBoxPizzaChoice.SelectedItem == null)
+                {
+                    errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
+                }
+                else
+                {
+                    errorProvider1.SetError(comboBoxPizzaChoice, "");
+                }
             }
         }
     }

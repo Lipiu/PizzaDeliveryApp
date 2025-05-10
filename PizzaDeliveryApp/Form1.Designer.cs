@@ -39,6 +39,7 @@
             checkBoxKetchup = new CheckBox();
             checkBoxSpicy = new CheckBox();
             button1 = new Button();
+            checkBoxNoKetchup = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -108,7 +109,7 @@
             // checkBoxSpicy
             // 
             checkBoxSpicy.AutoSize = true;
-            checkBoxSpicy.Location = new Point(155, 334);
+            checkBoxSpicy.Location = new Point(155, 338);
             checkBoxSpicy.Name = "checkBoxSpicy";
             checkBoxSpicy.Size = new Size(134, 27);
             checkBoxSpicy.TabIndex = 6;
@@ -129,11 +130,23 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // checkBoxNoKetchup
+            // 
+            checkBoxNoKetchup.AutoSize = true;
+            checkBoxNoKetchup.Location = new Point(244, 305);
+            checkBoxNoKetchup.Name = "checkBoxNoKetchup";
+            checkBoxNoKetchup.Size = new Size(45, 27);
+            checkBoxNoKetchup.TabIndex = 8;
+            checkBoxNoKetchup.Text = "no";
+            checkBoxNoKetchup.UseVisualStyleBackColor = true;
+            checkBoxNoKetchup.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(784, 561);
+            Controls.Add(checkBoxNoKetchup);
             Controls.Add(button1);
             Controls.Add(checkBoxSpicy);
             Controls.Add(checkBoxKetchup);
@@ -165,5 +178,6 @@
         private Label labelKetchup;
         private CheckBox checkBoxSpicy;
         private Button button1;
+        private CheckBox checkBoxNoKetchup;
     }
 }
