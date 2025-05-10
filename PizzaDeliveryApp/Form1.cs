@@ -12,22 +12,24 @@
         {
             string[] PizzaOptions = new string[]
             {
-                "Pepperoni - 28 RON",
+                "Pepperoni - 30 RON",
                 "Pepperoni & Feta - 35 RON",
                 "Margherita - 25 RON",
                 "Diavola - 30 RON",
                 "Spicy & Meaty - 40 RON",
                 "Quattro Stagioni - 30 RON",
+                "Quattro Formaggi - 36 RON",
                 "American Spicy - 35 RON",
-                "Quattro formaggi - 36 RON",
-                "Veggie & Mozzarella - 30 RON"
+                "Veggie & Mozzarella - 30 RON",
+                "Prosciutto e Funghi - 28 RON"
             };
 
+            //sorting alphabetically
             Array.Sort(PizzaOptions);
             comboBoxPizzaChoice.Items.AddRange(PizzaOptions);
+
             comboBoxPizzaChoice.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPizzaChoice.Width = 255;
-            comboBoxPizzaChoice.MaxDropDownItems = 6;
         }
 
         private void comboBoxPizzaChoice_SelectedIndexChanged(object sender, EventArgs e)

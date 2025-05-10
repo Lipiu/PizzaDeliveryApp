@@ -107,7 +107,7 @@
             // 
             textBoxName.Location = new Point(174, 215);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(100, 30);
+            textBoxName.Size = new Size(126, 30);
             textBoxName.TabIndex = 6;
             textBoxName.TextChanged += textBoxName_TextChanged;
             // 
@@ -115,7 +115,7 @@
             // 
             textBoxPhoneNumber.Location = new Point(174, 259);
             textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            textBoxPhoneNumber.Size = new Size(100, 30);
+            textBoxPhoneNumber.Size = new Size(126, 30);
             textBoxPhoneNumber.TabIndex = 7;
             textBoxPhoneNumber.TextChanged += textBoxPhoneNumber_TextChanged;
             // 
@@ -123,7 +123,7 @@
             // 
             textBoxAddress.Location = new Point(174, 301);
             textBoxAddress.Name = "textBoxAddress";
-            textBoxAddress.Size = new Size(100, 30);
+            textBoxAddress.Size = new Size(126, 30);
             textBoxAddress.TabIndex = 8;
             textBoxAddress.TextChanged += textBoxAddress_TextChanged;
             // 
@@ -131,7 +131,7 @@
             // 
             textBoxPayment.Location = new Point(174, 340);
             textBoxPayment.Name = "textBoxPayment";
-            textBoxPayment.Size = new Size(100, 30);
+            textBoxPayment.Size = new Size(126, 30);
             textBoxPayment.TabIndex = 9;
             textBoxPayment.TextChanged += textBoxPayment_TextChanged;
             // 
