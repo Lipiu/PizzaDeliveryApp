@@ -46,7 +46,19 @@ namespace PizzaDeliveryApp
             //validating phone number
             if (string.IsNullOrEmpty(textBoxPhoneNumber.Text))
             {
-                errorProvider1.SetError(textBoxPhoneNumber, "Please enter phone number!");
+                errorProvider1.SetError(textBoxPhoneNumber, "Please enter phone number!"); //checking if phone number field is empty
+                textBoxPhoneNumber.Focus();
+                return;
+            }
+            else if(textBoxPhoneNumber.Text.Length != 10)
+            {
+                errorProvider1.SetError(textBoxPhoneNumber, "Phone number must have only 10 digits!"); //checking if phone number has exactly 10 digits
+                textBoxPhoneNumber.Focus();
+                return;
+            }
+            else if(!textBoxPhoneNumber.Text.All(char.IsDigit))
+            {
+                errorProvider1.SetError(textBoxPhoneNumber, "Phone number must contain only digits!"); //checking if phone number filed contains any characters that are not digits
                 textBoxPhoneNumber.Focus();
                 return;
             }
