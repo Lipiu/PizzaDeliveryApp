@@ -78,9 +78,9 @@ namespace PizzaDeliveryApp
             {
                 errorProvider1.SetError(textBoxAddress, "");
             }
-
+            
             //validation for card payment info
-            if(checkBoxCard.Checked != true && checkBoxCash.Checked != true) //checking if the customer selected a payment method
+            if(!checkBoxCard.Checked && !checkBoxCash.Checked) //checking if the customer selected a payment method
             {
                 errorProvider1.SetError(checkBoxCard, "Please select payment method!");
                 return;
@@ -89,79 +89,84 @@ namespace PizzaDeliveryApp
             {
                 errorProvider1.SetError(checkBoxCard, "");
             }
-            //validating card holder
-            if(string.IsNullOrEmpty(textBoxCardHolder.Text))
-            {
-                errorProvider1.SetError(textBoxCardHolder, "Please enter name of card holder!");
-                textBoxCardHolder.Focus();
-                return;
-            }
-            else
-            {
-                errorProvider1.SetError(textBoxCardHolder, "");
-            }
 
-            //validating card number
-            if (string.IsNullOrEmpty(textBoxCardNumber.Text)) //checking if the field is empty
+            //if card payment method is selected
+            if (checkBoxCard.Checked)
             {
-                errorProvider1.SetError(textBoxCardNumber, "Card number cannot be empty!");
-                textBoxCardNumber.Focus();
-                return;
-            }
-            else if(textBoxCardNumber.Text.Length != 16) //checking if the card is exactly 16 digits long
-            {
-                errorProvider1.SetError(textBoxCardNumber, "Card number must be exactly 16 digits!");
-                textBoxCardNumber.Focus();
-                return;
-            }
-            else if(!textBoxCardNumber.Text.All(char.IsDigit)) //checking if the card contains any characters that are not digits
-            {
-                errorProvider1.SetError(textBoxCardNumber, "Card number must contain only digits!");
-                textBoxCardNumber.Focus();
-                return;
-            }
-            else
-            {
-                errorProvider1.SetError(textBoxCardNumber, "");
-            }
-
-            //validating expiring date
-            string expiringDateText = textBoxExpDate.Text.Trim();
-            if(!Regex.IsMatch(expiringDateText, @"^(0[1-9]|1[0-2])\/\d{2}$"))
-            {
-                errorProvider1.SetError(textBoxExpDate, "Expiration date must be in MM/YY format.");
-                textBoxExpDate.Focus();
-                return;
-            }
-            else
-            {
-                string[] parts = expiringDateText.Split('/');
-                int month = int.Parse(parts[0]);
-                int year = int.Parse(parts[1]) + 2000;
-
-                DateTime expDate = new DateTime(year, month, 1).AddMonths(1).AddDays(-1);
-                if(expDate < DateTime.Now)
+                //validating card holder
+                if (string.IsNullOrEmpty(textBoxCardHolder.Text))
                 {
-                    errorProvider1.SetError(textBoxExpDate, "Card is expired.");
+                    errorProvider1.SetError(textBoxCardHolder, "Please enter name of card holder!");
+                    textBoxCardHolder.Focus();
+                    return;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBoxCardHolder, "");
+                }
+
+                //validating card number
+                if (string.IsNullOrEmpty(textBoxCardNumber.Text)) //checking if the field is empty
+                {
+                    errorProvider1.SetError(textBoxCardNumber, "Card number cannot be empty!");
+                    textBoxCardNumber.Focus();
+                    return;
+                }
+                else if (textBoxCardNumber.Text.Length != 16) //checking if the card is exactly 16 digits long
+                {
+                    errorProvider1.SetError(textBoxCardNumber, "Card number must be exactly 16 digits!");
+                    textBoxCardNumber.Focus();
+                    return;
+                }
+                else if (!textBoxCardNumber.Text.All(char.IsDigit)) //checking if the card contains any characters that are not digits
+                {
+                    errorProvider1.SetError(textBoxCardNumber, "Card number must contain only digits!");
+                    textBoxCardNumber.Focus();
+                    return;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBoxCardNumber, "");
+                }
+
+                //validating expiring date
+                string expiringDateText = textBoxExpDate.Text.Trim();
+                if (!Regex.IsMatch(expiringDateText, @"^(0[1-9]|1[0-2])\/\d{2}$"))
+                {
+                    errorProvider1.SetError(textBoxExpDate, "Expiration date must be in MM/YY format.");
                     textBoxExpDate.Focus();
                     return;
                 }
                 else
                 {
-                    errorProvider1.SetError(textBoxExpDate, "");
+                    string[] parts = expiringDateText.Split('/');
+                    int month = int.Parse(parts[0]);
+                    int year = int.Parse(parts[1]) + 2000;
+
+                    DateTime expDate = new DateTime(year, month, 1).AddMonths(1).AddDays(-1);
+                    if (expDate < DateTime.Now)
+                    {
+                        errorProvider1.SetError(textBoxExpDate, "Card is expired.");
+                        textBoxExpDate.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textBoxExpDate, "");
+                    }
                 }
-            }
-            
-            //validating CVV
-            if(textBoxCvv.Text.Length != 3)
-            {
-                errorProvider1.SetError(textBoxCvv, "Invalid CVV!");
-                textBoxCvv.Focus();
-                return;
-            }
-            else
-            {
-                errorProvider1.SetError(textBoxCvv, "");
+
+                //validating CVV
+                if (textBoxCvv.Text.Length != 3)
+                {
+                    errorProvider1.SetError(textBoxCvv, "Invalid CVV!");
+                    textBoxCvv.Focus();
+                    return;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBoxCvv, "");
+                }
             }
 
 
