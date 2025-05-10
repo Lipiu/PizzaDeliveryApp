@@ -39,9 +39,18 @@
             textBoxName = new TextBox();
             textBoxPhoneNumber = new TextBox();
             textBoxAddress = new TextBox();
-            textBoxPayment = new TextBox();
             errorProvider1 = new ErrorProvider(components);
             buttonOrder = new Button();
+            checkBoxCash = new CheckBox();
+            checkBoxCard = new CheckBox();
+            labelCardNumber = new Label();
+            textBoxCardNumber = new TextBox();
+            labelCardHolder = new Label();
+            textBoxCardHolder = new TextBox();
+            labelExpDate = new Label();
+            textBoxExpDate = new TextBox();
+            textBoxCvv = new TextBox();
+            labelCvv = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -127,14 +136,6 @@
             textBoxAddress.TabIndex = 8;
             textBoxAddress.TextChanged += textBoxAddress_TextChanged;
             // 
-            // textBoxPayment
-            // 
-            textBoxPayment.Location = new Point(174, 340);
-            textBoxPayment.Name = "textBoxPayment";
-            textBoxPayment.Size = new Size(126, 30);
-            textBoxPayment.TabIndex = 9;
-            textBoxPayment.TextChanged += textBoxPayment_TextChanged;
-            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
@@ -143,7 +144,7 @@
             // 
             buttonOrder.BackColor = Color.FromArgb(255, 128, 128);
             buttonOrder.FlatStyle = FlatStyle.Flat;
-            buttonOrder.Location = new Point(174, 411);
+            buttonOrder.Location = new Point(382, 507);
             buttonOrder.Name = "buttonOrder";
             buttonOrder.Size = new Size(103, 30);
             buttonOrder.TabIndex = 10;
@@ -151,14 +152,108 @@
             buttonOrder.UseVisualStyleBackColor = false;
             buttonOrder.Click += buttonOrder_Click;
             // 
+            // checkBoxCash
+            // 
+            checkBoxCash.AutoSize = true;
+            checkBoxCash.Location = new Point(173, 340);
+            checkBoxCash.Name = "checkBoxCash";
+            checkBoxCash.Size = new Size(62, 27);
+            checkBoxCash.TabIndex = 11;
+            checkBoxCash.Text = "Cash";
+            checkBoxCash.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCard
+            // 
+            checkBoxCard.AutoSize = true;
+            checkBoxCard.Location = new Point(241, 340);
+            checkBoxCard.Name = "checkBoxCard";
+            checkBoxCard.Size = new Size(64, 27);
+            checkBoxCard.TabIndex = 12;
+            checkBoxCard.Text = "Card";
+            checkBoxCard.UseVisualStyleBackColor = true;
+            checkBoxCard.CheckedChanged += checkBoxCard_CheckedChanged;
+            // 
+            // labelCardNumber
+            // 
+            labelCardNumber.AutoSize = true;
+            labelCardNumber.Location = new Point(12, 424);
+            labelCardNumber.Name = "labelCardNumber";
+            labelCardNumber.Size = new Size(103, 23);
+            labelCardNumber.TabIndex = 13;
+            labelCardNumber.Text = "Card number";
+            // 
+            // textBoxCardNumber
+            // 
+            textBoxCardNumber.Location = new Point(173, 421);
+            textBoxCardNumber.Name = "textBoxCardNumber";
+            textBoxCardNumber.Size = new Size(127, 30);
+            textBoxCardNumber.TabIndex = 14;
+            // 
+            // labelCardHolder
+            // 
+            labelCardHolder.AutoSize = true;
+            labelCardHolder.Location = new Point(12, 385);
+            labelCardHolder.Name = "labelCardHolder";
+            labelCardHolder.Size = new Size(96, 23);
+            labelCardHolder.TabIndex = 15;
+            labelCardHolder.Text = "Card holder";
+            // 
+            // textBoxCardHolder
+            // 
+            textBoxCardHolder.Location = new Point(173, 382);
+            textBoxCardHolder.Name = "textBoxCardHolder";
+            textBoxCardHolder.Size = new Size(127, 30);
+            textBoxCardHolder.TabIndex = 16;
+            // 
+            // labelExpDate
+            // 
+            labelExpDate.AutoSize = true;
+            labelExpDate.Location = new Point(12, 465);
+            labelExpDate.Name = "labelExpDate";
+            labelExpDate.Size = new Size(96, 23);
+            labelExpDate.TabIndex = 17;
+            labelExpDate.Text = "Expire date";
+            // 
+            // textBoxExpDate
+            // 
+            textBoxExpDate.Location = new Point(173, 462);
+            textBoxExpDate.Name = "textBoxExpDate";
+            textBoxExpDate.Size = new Size(127, 30);
+            textBoxExpDate.TabIndex = 18;
+            // 
+            // textBoxCvv
+            // 
+            textBoxCvv.Location = new Point(174, 507);
+            textBoxCvv.Name = "textBoxCvv";
+            textBoxCvv.Size = new Size(126, 30);
+            textBoxCvv.TabIndex = 19;
+            // 
+            // labelCvv
+            // 
+            labelCvv.AutoSize = true;
+            labelCvv.Location = new Point(12, 510);
+            labelCvv.Name = "labelCvv";
+            labelCvv.Size = new Size(40, 23);
+            labelCvv.TabIndex = 20;
+            labelCvv.Text = "CVV";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(784, 561);
+            Controls.Add(labelCvv);
+            Controls.Add(textBoxCvv);
+            Controls.Add(textBoxExpDate);
+            Controls.Add(labelExpDate);
+            Controls.Add(textBoxCardHolder);
+            Controls.Add(labelCardHolder);
+            Controls.Add(textBoxCardNumber);
+            Controls.Add(labelCardNumber);
+            Controls.Add(checkBoxCard);
+            Controls.Add(checkBoxCash);
             Controls.Add(buttonOrder);
-            Controls.Add(textBoxPayment);
             Controls.Add(textBoxAddress);
             Controls.Add(textBoxPhoneNumber);
             Controls.Add(textBoxName);
@@ -172,6 +267,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form2";
             Text = "Form2";
+            Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
@@ -189,8 +285,17 @@
         private TextBox textBoxName;
         private TextBox textBoxPhoneNumber;
         private TextBox textBoxAddress;
-        private TextBox textBoxPayment;
         private ErrorProvider errorProvider1;
         private Button buttonOrder;
+        private CheckBox checkBoxCard;
+        private CheckBox checkBoxCash;
+        private Label labelCardNumber;
+        private TextBox textBoxCardNumber;
+        private Label labelCvv;
+        private TextBox textBoxCvv;
+        private TextBox textBoxExpDate;
+        private Label labelExpDate;
+        private TextBox textBoxCardHolder;
+        private Label labelCardHolder;
     }
 }
