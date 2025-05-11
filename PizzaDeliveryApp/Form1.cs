@@ -190,7 +190,8 @@ namespace PizzaDeliveryApp
 
         private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "-Different options for pizzas\n" +
+            string aboutText = "-Different types of pizza\n" +
+                               "-For now the prices are related to the size Large\n" +
                                "-Very tasty!";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
