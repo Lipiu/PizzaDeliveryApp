@@ -98,6 +98,10 @@ namespace PizzaDeliveryApp
             {
                 errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
             }
+            else if(comboBoxPizzaSize.SelectedItem == null)
+            {
+                errorProvider1.SetError(comboBoxPizzaSize, "Please select size of pizza!");
+            }
             else
             {
                 Pizza pizza = new Pizza();
@@ -184,8 +188,9 @@ namespace PizzaDeliveryApp
 
         private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "-Different types of pizza\n" +
-                               "-For now the prices are related to the size Large\n" +
+            string aboutText = "-Different types of pizza.\n" +
+                               "-For now the prices are related to the size Large.\n" +
+                               "-By default ketchup selection is set to false.\n" +
                                "-Very tasty!";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
