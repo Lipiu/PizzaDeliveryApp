@@ -175,14 +175,16 @@
             // serializeToolStripMenuItem
             // 
             serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
-            serializeToolStripMenuItem.Size = new Size(171, 26);
+            serializeToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            serializeToolStripMenuItem.Size = new Size(228, 26);
             serializeToolStripMenuItem.Text = "Serialize";
             serializeToolStripMenuItem.Click += serializeToolStripMenuItem_Click;
             // 
             // deserializeToolStripMenuItem
             // 
             deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
-            deserializeToolStripMenuItem.Size = new Size(171, 26);
+            deserializeToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.D;
+            deserializeToolStripMenuItem.Size = new Size(228, 26);
             deserializeToolStripMenuItem.Text = "Deserialize";
             deserializeToolStripMenuItem.Click += deserializeToolStripMenuItem_Click;
             // 
