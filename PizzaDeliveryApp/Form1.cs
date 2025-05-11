@@ -118,15 +118,6 @@ namespace PizzaDeliveryApp
                 checkBoxKetchup.Checked = false;
                 checkBoxSpicy.Checked = false;
                 checkBoxSpicy.Enabled = false;
-
-                if (comboBoxPizzaChoice.SelectedItem == null)
-                {
-                    errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
-                }
-                else
-                {
-                    errorProvider1.SetError(comboBoxPizzaChoice, "");
-                }
             }
         }
 
