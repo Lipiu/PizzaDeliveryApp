@@ -161,6 +161,7 @@
             checkBoxCash.TabIndex = 11;
             checkBoxCash.Text = "Cash";
             checkBoxCash.UseVisualStyleBackColor = true;
+            checkBoxCash.CheckedChanged += checkBoxCash_CheckedChanged;
             // 
             // checkBoxCard
             // 

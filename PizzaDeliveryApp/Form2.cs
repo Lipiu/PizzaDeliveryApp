@@ -223,6 +223,8 @@ namespace PizzaDeliveryApp
 
                 labelCvv.Visible = true;
                 textBoxCvv.Visible = true;
+
+                checkBoxCash.Enabled = false;
             }
             else
             {
@@ -237,6 +239,8 @@ namespace PizzaDeliveryApp
 
                 labelCvv.Visible = false;
                 textBoxCvv.Visible = false;
+
+                checkBoxCash.Enabled = true;
             }
         }
 
@@ -258,6 +262,18 @@ namespace PizzaDeliveryApp
         private void labelExpDate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBoxCash_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxCash.Checked == true)
+            {
+                checkBoxCard.Enabled = false;
+            }
+            else
+            {
+                checkBoxCard.Enabled = true;
+            }
         }
     }
 }
