@@ -47,6 +47,8 @@
             aboutAppToolStripMenuItem = new ToolStripMenuItem();
             aboutPizzaToolStripMenuItem = new ToolStripMenuItem();
             pizzaToolStripMenuItem = new ToolStripMenuItem();
+            labelSize = new Label();
+            comboBoxPizzaSize = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -96,7 +98,7 @@
             // labelKetchup
             // 
             labelKetchup.AutoSize = true;
-            labelKetchup.Location = new Point(12, 305);
+            labelKetchup.Location = new Point(12, 356);
             labelKetchup.Name = "labelKetchup";
             labelKetchup.Size = new Size(97, 28);
             labelKetchup.TabIndex = 4;
@@ -105,7 +107,7 @@
             // checkBoxKetchup
             // 
             checkBoxKetchup.AutoSize = true;
-            checkBoxKetchup.Location = new Point(155, 305);
+            checkBoxKetchup.Location = new Point(155, 356);
             checkBoxKetchup.Name = "checkBoxKetchup";
             checkBoxKetchup.Size = new Size(65, 32);
             checkBoxKetchup.TabIndex = 5;
@@ -117,7 +119,7 @@
             // checkBoxSpicy
             // 
             checkBoxSpicy.AutoSize = true;
-            checkBoxSpicy.Location = new Point(155, 338);
+            checkBoxSpicy.Location = new Point(155, 389);
             checkBoxSpicy.Name = "checkBoxSpicy";
             checkBoxSpicy.Size = new Size(165, 32);
             checkBoxSpicy.TabIndex = 6;
@@ -130,7 +132,7 @@
             // 
             button1.BackColor = Color.FromArgb(255, 128, 128);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(12, 409);
+            button1.Location = new Point(12, 463);
             button1.Name = "button1";
             button1.Size = new Size(175, 35);
             button1.TabIndex = 7;
@@ -141,7 +143,7 @@
             // checkBoxNoKetchup
             // 
             checkBoxNoKetchup.AutoSize = true;
-            checkBoxNoKetchup.Location = new Point(244, 305);
+            checkBoxNoKetchup.Location = new Point(244, 356);
             checkBoxNoKetchup.Name = "checkBoxNoKetchup";
             checkBoxNoKetchup.Size = new Size(55, 32);
             checkBoxNoKetchup.TabIndex = 8;
@@ -173,14 +175,14 @@
             // serializeToolStripMenuItem
             // 
             serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
-            serializeToolStripMenuItem.Size = new Size(224, 26);
+            serializeToolStripMenuItem.Size = new Size(171, 26);
             serializeToolStripMenuItem.Text = "Serialize";
             serializeToolStripMenuItem.Click += serializeToolStripMenuItem_Click;
             // 
             // deserializeToolStripMenuItem
             // 
             deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
-            deserializeToolStripMenuItem.Size = new Size(224, 26);
+            deserializeToolStripMenuItem.Size = new Size(171, 26);
             deserializeToolStripMenuItem.Text = "Deserialize";
             deserializeToolStripMenuItem.Click += deserializeToolStripMenuItem_Click;
             // 
@@ -196,22 +198,42 @@
             // aboutPizzaToolStripMenuItem
             // 
             aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
-            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
+            aboutPizzaToolStripMenuItem.Size = new Size(189, 26);
             aboutPizzaToolStripMenuItem.Text = "App features";
             aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
             // 
             // pizzaToolStripMenuItem
             // 
             pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            pizzaToolStripMenuItem.Size = new Size(224, 26);
+            pizzaToolStripMenuItem.Size = new Size(189, 26);
             pizzaToolStripMenuItem.Text = "Pizza";
             pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
+            // 
+            // labelSize
+            // 
+            labelSize.AutoSize = true;
+            labelSize.Location = new Point(12, 298);
+            labelSize.Name = "labelSize";
+            labelSize.Size = new Size(115, 28);
+            labelSize.TabIndex = 10;
+            labelSize.Text = "Select size";
+            // 
+            // comboBoxPizzaSize
+            // 
+            comboBoxPizzaSize.FormattingEnabled = true;
+            comboBoxPizzaSize.Location = new Point(178, 295);
+            comboBoxPizzaSize.Name = "comboBoxPizzaSize";
+            comboBoxPizzaSize.Size = new Size(151, 36);
+            comboBoxPizzaSize.TabIndex = 11;
+            comboBoxPizzaSize.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(784, 561);
+            Controls.Add(comboBoxPizzaSize);
+            Controls.Add(labelSize);
             Controls.Add(checkBoxNoKetchup);
             Controls.Add(button1);
             Controls.Add(checkBoxSpicy);
@@ -256,5 +278,7 @@
         private ToolStripMenuItem aboutAppToolStripMenuItem;
         private ToolStripMenuItem aboutPizzaToolStripMenuItem;
         private ToolStripMenuItem pizzaToolStripMenuItem;
+        private Label labelSize;
+        private ComboBox comboBoxPizzaSize;
     }
 }

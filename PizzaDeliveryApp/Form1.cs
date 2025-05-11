@@ -26,12 +26,23 @@ namespace PizzaDeliveryApp
                 "Prosciutto e Funghi - 30 RON"
             };
 
+            string[] pizzaSize = new string[]
+            {
+                "Small - 25 cm",
+                "Medium - 30 cm",
+                "Large - 40 cm"
+            };
+
             //sorting alphabetically
             Array.Sort(PizzaOptions);
             comboBoxPizzaChoice.Items.AddRange(PizzaOptions);
+            comboBoxPizzaSize.Items.AddRange(pizzaSize);
 
             comboBoxPizzaChoice.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPizzaSize.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             comboBoxPizzaChoice.Width = 300;
+            comboBoxPizzaSize.Width = 155;
         }
 
         private void comboBoxPizzaChoice_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +136,7 @@ namespace PizzaDeliveryApp
             pizza.TypeOfPizza = comboBoxPizzaChoice.Text;
             pizza.HasKetchup = checkBoxKetchup.Checked;
             pizza.SpicyKetchup = checkBoxSpicy.Checked;
+            pizza.PizzaSize = comboBoxPizzaSize.Text;
 
             var json = JsonSerializer.Serialize(pizza);
             using (StreamWriter sw = new StreamWriter(File.Create("PizzaOrder.json")))
@@ -147,6 +159,7 @@ namespace PizzaDeliveryApp
                         comboBoxPizzaChoice.SelectedItem = pizza.TypeOfPizza;
                         checkBoxKetchup.Checked = pizza.HasKetchup;
                         checkBoxSpicy.Checked = pizza.SpicyKetchup;
+                        comboBoxPizzaSize.SelectedItem = pizza.PizzaSize;
 
                         MessageBox.Show("Pizza order deserialized!");
                     }
@@ -169,21 +182,26 @@ namespace PizzaDeliveryApp
 
         private void aboutPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
-                "Support for serialization and deserialization";
+            string aboutText = "-This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
+                "-Support for serialization and deserialization";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }
 
         private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "All pizzas have the same size (Large, 40cm)\n" +
-                               "Very tasty!";
+            string aboutText = "-Different options for pizzas\n" +
+                               "-Very tasty!";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }
 
         private void jSONSERIALIZATIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

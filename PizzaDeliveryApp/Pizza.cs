@@ -11,6 +11,7 @@ namespace PizzaDeliveryApp
         public string TypeOfPizza {  get; set; }
         public bool HasKetchup {  get; set; }
         public bool SpicyKetchup { get; set; }
+        public string PizzaSize { get; set; }
         public static int NumberOfOrders; // to keep track of orders
 
         //default constructor
@@ -19,11 +20,12 @@ namespace PizzaDeliveryApp
         }
 
         //constructor with parameters
-        public Pizza(string typeOfPizza, bool hasKetchup, bool spicyKetchup)
+        public Pizza(string typeOfPizza, bool hasKetchup, bool spicyKetchup, string pizzaSize)
         {
             TypeOfPizza = typeOfPizza;
             HasKetchup = hasKetchup;
             SpicyKetchup = spicyKetchup;
+            PizzaSize = pizzaSize;
             NumberOfOrders += 1;
         }
     }
