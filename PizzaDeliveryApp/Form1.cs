@@ -178,7 +178,7 @@ namespace PizzaDeliveryApp
         private void aboutPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string aboutText = "- This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
-                "- Support for serialization and deserialization\n" +
+                "- Support for JSON serialization and deserialization\n" +
                 "- Support for shortcuts:\n" +
                 "    -> CTRL+S - Serialization\n" +
                 "    -> CTRL+D - Deserialization";
