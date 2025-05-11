@@ -9,7 +9,6 @@ namespace PizzaDeliveryApp
     public class Pizza
     {
         public string TypeOfPizza {  get; set; }
-        public string SizeOfPizza { get; set; }
         public bool HasKetchup {  get; set; }
         public bool SpicyKetchup { get; set; }
         public static int NumberOfOrders; // to keep track of orders
@@ -20,10 +19,9 @@ namespace PizzaDeliveryApp
         }
 
         //constructor with parameters
-        public Pizza(string typeOfPizza, string sizeOfPizza, bool hasKetchup, bool spicyKetchup)
+        public Pizza(string typeOfPizza, bool hasKetchup, bool spicyKetchup)
         {
             TypeOfPizza = typeOfPizza;
-            SizeOfPizza = sizeOfPizza;
             HasKetchup = hasKetchup;
             SpicyKetchup = spicyKetchup;
             NumberOfOrders += 1;

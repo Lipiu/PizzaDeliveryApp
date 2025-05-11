@@ -40,8 +40,16 @@
             checkBoxSpicy = new CheckBox();
             button1 = new Button();
             checkBoxNoKetchup = new CheckBox();
+            menuStrip1 = new MenuStrip();
+            jSONSERIALIZATIONToolStripMenuItem = new ToolStripMenuItem();
+            serializeToolStripMenuItem = new ToolStripMenuItem();
+            deserializeToolStripMenuItem = new ToolStripMenuItem();
+            aboutAppToolStripMenuItem = new ToolStripMenuItem();
+            aboutPizzaToolStripMenuItem = new ToolStripMenuItem();
+            pizzaToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // comboBoxPizzaChoice
@@ -141,6 +149,63 @@
             checkBoxNoKetchup.UseVisualStyleBackColor = true;
             checkBoxNoKetchup.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.FromArgb(255, 128, 128);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { jSONSERIALIZATIONToolStripMenuItem, aboutAppToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(784, 29);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // jSONSERIALIZATIONToolStripMenuItem
+            // 
+            jSONSERIALIZATIONToolStripMenuItem.BackColor = Color.FromArgb(255, 128, 128);
+            jSONSERIALIZATIONToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem, deserializeToolStripMenuItem });
+            jSONSERIALIZATIONToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            jSONSERIALIZATIONToolStripMenuItem.Name = "jSONSERIALIZATIONToolStripMenuItem";
+            jSONSERIALIZATIONToolStripMenuItem.Size = new Size(202, 25);
+            jSONSERIALIZATIONToolStripMenuItem.Text = "JSON SERIALIZATION";
+            // 
+            // serializeToolStripMenuItem
+            // 
+            serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
+            serializeToolStripMenuItem.Size = new Size(224, 26);
+            serializeToolStripMenuItem.Text = "Serialize";
+            serializeToolStripMenuItem.Click += serializeToolStripMenuItem_Click;
+            // 
+            // deserializeToolStripMenuItem
+            // 
+            deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
+            deserializeToolStripMenuItem.Size = new Size(224, 26);
+            deserializeToolStripMenuItem.Text = "Deserialize";
+            deserializeToolStripMenuItem.Click += deserializeToolStripMenuItem_Click;
+            // 
+            // aboutAppToolStripMenuItem
+            // 
+            aboutAppToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutPizzaToolStripMenuItem, pizzaToolStripMenuItem });
+            aboutAppToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            aboutAppToolStripMenuItem.Name = "aboutAppToolStripMenuItem";
+            aboutAppToolStripMenuItem.Size = new Size(67, 25);
+            aboutAppToolStripMenuItem.Text = "About";
+            aboutAppToolStripMenuItem.Click += aboutAppToolStripMenuItem_Click;
+            // 
+            // aboutPizzaToolStripMenuItem
+            // 
+            aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
+            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
+            aboutPizzaToolStripMenuItem.Text = "App features";
+            aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
+            // 
+            // pizzaToolStripMenuItem
+            // 
+            pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
+            pizzaToolStripMenuItem.Size = new Size(224, 26);
+            pizzaToolStripMenuItem.Text = "Pizza";
+            pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -155,14 +220,18 @@
             Controls.Add(pictureBoxPizza);
             Controls.Add(labelSelectPizza);
             Controls.Add(comboBoxPizzaChoice);
+            Controls.Add(menuStrip1);
             Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,5 +248,12 @@
         private CheckBox checkBoxSpicy;
         private Button button1;
         private CheckBox checkBoxNoKetchup;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem jSONSERIALIZATIONToolStripMenuItem;
+        private ToolStripMenuItem serializeToolStripMenuItem;
+        private ToolStripMenuItem deserializeToolStripMenuItem;
+        private ToolStripMenuItem aboutAppToolStripMenuItem;
+        private ToolStripMenuItem aboutPizzaToolStripMenuItem;
+        private ToolStripMenuItem pizzaToolStripMenuItem;
     }
 }

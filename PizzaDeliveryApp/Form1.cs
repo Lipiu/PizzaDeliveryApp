@@ -1,4 +1,6 @@
-﻿namespace PizzaDeliveryApp
+﻿using System.Text.Json;
+
+namespace PizzaDeliveryApp
 {
     public partial class Form1 : Form
     {
@@ -115,6 +117,70 @@
                     errorProvider1.SetError(comboBoxPizzaChoice, "");
                 }
             }
+        }
+
+        private void serializeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pizza = new Pizza();
+            pizza.TypeOfPizza = comboBoxPizzaChoice.Text;
+            pizza.HasKetchup = checkBoxKetchup.Checked;
+            pizza.SpicyKetchup = checkBoxSpicy.Checked;
+
+            var json = JsonSerializer.Serialize(pizza);
+            using (StreamWriter sw = new StreamWriter(File.Create("serialized.json")))
+            {
+                sw.WriteLine(json);
+            }
+            MessageBox.Show("Pizza order serialized successfully!");
+        }
+
+        private void deserializeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("pizzaOrder.json"))
+            {
+                using (StreamReader sr = new StreamReader(File.OpenRead("pizzaOrder.json")))
+                {
+                    try
+                    {
+                        var json = sr.ReadToEnd();
+                        Pizza pizza = JsonSerializer.Deserialize<Pizza>(json);
+                        comboBoxPizzaChoice.SelectedItem = pizza.TypeOfPizza;
+                        checkBoxKetchup.Checked = pizza.HasKetchup;
+                        checkBoxSpicy.Checked = pizza.SpicyKetchup;
+
+                        MessageBox.Show("Pizza order deserialized!");
+                    }
+                    catch (JsonException ex)
+                    {
+                        MessageBox.Show("Error while deserializing!");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No saved pizza orders found!");
+            }
+        }
+
+        private void aboutAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutPizzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string aboutText = "This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
+                "This app also supports serialization and deserialization";
+
+            MessageBox.Show(aboutText, "About pizzaDeliveryApp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string aboutText = "All pizzas have the same size (Large)\n " +
+                               "Very tasty!";
+
+            MessageBox.Show(aboutText, "About pizzaDeliveryApp", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
