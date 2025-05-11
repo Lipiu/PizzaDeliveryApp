@@ -73,7 +73,7 @@
             // pictureBoxPizza
             // 
             pictureBoxPizza.Image = (Image)resources.GetObject("pictureBoxPizza.Image");
-            pictureBoxPizza.Location = new Point(295, 35);
+            pictureBoxPizza.Location = new Point(299, 72);
             pictureBoxPizza.Name = "pictureBoxPizza";
             pictureBoxPizza.Size = new Size(151, 141);
             pictureBoxPizza.TabIndex = 2;
@@ -83,7 +83,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(299, 9);
+            label2.Location = new Point(285, 41);
             label2.Name = "label2";
             label2.Size = new Size(185, 28);
             label2.TabIndex = 3;
@@ -168,6 +168,7 @@
             jSONSERIALIZATIONToolStripMenuItem.Name = "jSONSERIALIZATIONToolStripMenuItem";
             jSONSERIALIZATIONToolStripMenuItem.Size = new Size(202, 25);
             jSONSERIALIZATIONToolStripMenuItem.Text = "JSON SERIALIZATION";
+            jSONSERIALIZATIONToolStripMenuItem.Click += jSONSERIALIZATIONToolStripMenuItem_Click;
             // 
             // serializeToolStripMenuItem
             // 

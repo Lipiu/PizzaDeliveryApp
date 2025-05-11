@@ -14,16 +14,16 @@ namespace PizzaDeliveryApp
         {
             string[] PizzaOptions = new string[]
             {
-                "Pepperoni - 30 RON",
-                "Pepperoni & Feta - 35 RON",
-                "Margherita - 25 RON",
-                "Diavola - 30 RON",
-                "Spicy & Meaty - 40 RON",
-                "Quattro Stagioni - 30 RON",
-                "Quattro Formaggi - 36 RON",
-                "American Spicy - 35 RON",
+                "Pepperoni - 40 RON",
+                "Pepperoni & Feta - 45 RON",
+                "Margherita - 35 RON",
+                "Diavola - 38 RON",
+                "Spicy & Meaty - 50 RON",
+                "Quattro Stagioni - 35 RON",
+                "Quattro Formaggi - 38 RON",
+                "American Spicy - 45 RON",
                 "Veggie & Mozzarella - 30 RON",
-                "Prosciutto e Funghi - 28 RON"
+                "Prosciutto e Funghi - 30 RON"
             };
 
             //sorting alphabetically
@@ -31,7 +31,7 @@ namespace PizzaDeliveryApp
             comboBoxPizzaChoice.Items.AddRange(PizzaOptions);
 
             comboBoxPizzaChoice.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxPizzaChoice.Width = 255;
+            comboBoxPizzaChoice.Width = 300;
         }
 
         private void comboBoxPizzaChoice_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace PizzaDeliveryApp
             pizza.SpicyKetchup = checkBoxSpicy.Checked;
 
             var json = JsonSerializer.Serialize(pizza);
-            using (StreamWriter sw = new StreamWriter(File.Create("serialized.json")))
+            using (StreamWriter sw = new StreamWriter(File.Create("PizzaOrder.json")))
             {
                 sw.WriteLine(json);
             }
@@ -138,7 +138,7 @@ namespace PizzaDeliveryApp
         {
             if (File.Exists("pizzaOrder.json"))
             {
-                using (StreamReader sr = new StreamReader(File.OpenRead("pizzaOrder.json")))
+                using (StreamReader sr = new StreamReader(File.OpenRead("PizzaOrder.json")))
                 {
                     try
                     {
@@ -170,17 +170,22 @@ namespace PizzaDeliveryApp
         private void aboutPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string aboutText = "This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
-                "This app also supports serialization and deserialization";
+                "Support for serialization and deserialization";
 
-            MessageBox.Show(aboutText, "About pizzaDeliveryApp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }
 
         private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "All pizzas have the same size (Large)\n " +
+            string aboutText = "All pizzas have the same size (Large, 40cm)\n" +
                                "Very tasty!";
 
-            MessageBox.Show(aboutText, "About pizzaDeliveryApp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(aboutText, "About pizzaDeliveryApp");
+        }
+
+        private void jSONSERIALIZATIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
