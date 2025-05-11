@@ -177,9 +177,9 @@ namespace PizzaDeliveryApp
 
         private void aboutPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "-This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
-                "-Support for serialization and deserialization" +
-                "-Support for shortcuts:\n" +
+            string aboutText = "- This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
+                "- Support for serialization and deserialization\n" +
+                "- Support for shortcuts:\n" +
                 "    -> CTRL+S - Serialization\n" +
                 "    -> CTRL+D - Deserialization";
 
@@ -188,10 +188,10 @@ namespace PizzaDeliveryApp
 
         private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string aboutText = "-Different types of pizza.\n" +
-                               "-For now the prices are related to the size Large.\n" +
-                               "-By default ketchup selection is set to false.\n" +
-                               "-Very tasty!";
+            string aboutText = "- Different types of pizza.\n" +
+                               "- For now the prices are related to the size Large.\n" +
+                               "- By default ketchup selection is set to false.\n" +
+                               "- Very tasty!";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }

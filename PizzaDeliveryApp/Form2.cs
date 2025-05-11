@@ -51,13 +51,13 @@ namespace PizzaDeliveryApp
                 textBoxPhoneNumber.Focus();
                 return;
             }
-            else if(textBoxPhoneNumber.Text.Length != 10)
+            else if (textBoxPhoneNumber.Text.Length != 10)
             {
                 errorProvider1.SetError(textBoxPhoneNumber, "Phone number must have only 10 digits!"); //checking if phone number has exactly 10 digits
                 textBoxPhoneNumber.Focus();
                 return;
             }
-            else if(!textBoxPhoneNumber.Text.All(char.IsDigit))
+            else if (!textBoxPhoneNumber.Text.All(char.IsDigit))
             {
                 errorProvider1.SetError(textBoxPhoneNumber, "Phone number must contain only digits!"); //checking if phone number filed contains any characters that are not digits
                 textBoxPhoneNumber.Focus();
@@ -79,9 +79,9 @@ namespace PizzaDeliveryApp
             {
                 errorProvider1.SetError(textBoxAddress, "");
             }
-            
+
             //validation for card payment info
-            if(!checkBoxCard.Checked && !checkBoxCash.Checked) //checking if the customer selected a payment method
+            if (!checkBoxCard.Checked && !checkBoxCash.Checked) //checking if the customer selected a payment method
             {
                 errorProvider1.SetError(checkBoxCard, "Please select payment method!");
                 return;
@@ -253,6 +253,11 @@ namespace PizzaDeliveryApp
 
             labelCvv.Visible = false;
             textBoxCvv.Visible = false;
+        }
+
+        private void labelExpDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
