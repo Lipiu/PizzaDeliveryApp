@@ -13,9 +13,10 @@ namespace PizzaDeliveryApp
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(Pizza pizza)
         {
             InitializeComponent();
+            this.pizza = pizza;
             errorProvider1 = new ErrorProvider();
         }
 
@@ -172,6 +173,24 @@ namespace PizzaDeliveryApp
 
             //if all fields are valid display message
             MessageBox.Show("Order placed sucessfully!\nThank you and enjoy your pizza!!");
+
+            string[] nameParts = textBoxName.Text.Trim().Split(' ');
+            string firstName = nameParts[0];
+            string lastName = "";
+            if (nameParts.Length > 1)
+            {
+                lastName = nameParts[1];
+            }
+
+            //Create client
+            Client client = new Client();
+            client.FirstName = firstName;
+            client.LastName = lastName;
+            client.PhoneNumber = textBoxPhoneNumber.Text;
+
+            //Create address
+            Address address = new Address();
+            address.fullAddress = textBoxAddress.Text;
         }
 
         private void textBoxAddress_TextChanged(object sender, EventArgs e)

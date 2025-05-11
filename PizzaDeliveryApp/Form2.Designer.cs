@@ -285,6 +285,7 @@
         private TextBox textBoxName;
         private TextBox textBoxPhoneNumber;
         private TextBox textBoxAddress;
+        private Pizza pizza;
         private ErrorProvider errorProvider1;
         private Button buttonOrder;
         private CheckBox checkBoxCard;

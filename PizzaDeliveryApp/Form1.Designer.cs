@@ -47,9 +47,9 @@
             // comboBoxPizzaChoice
             // 
             comboBoxPizzaChoice.FormattingEnabled = true;
-            comboBoxPizzaChoice.Location = new Point(155, 239);
+            comboBoxPizzaChoice.Location = new Point(178, 239);
             comboBoxPizzaChoice.Name = "comboBoxPizzaChoice";
-            comboBoxPizzaChoice.Size = new Size(121, 31);
+            comboBoxPizzaChoice.Size = new Size(152, 36);
             comboBoxPizzaChoice.TabIndex = 0;
             comboBoxPizzaChoice.SelectedIndexChanged += comboBoxPizzaChoice_SelectedIndexChanged;
             // 
@@ -58,7 +58,7 @@
             labelSelectPizza.AutoSize = true;
             labelSelectPizza.Location = new Point(12, 242);
             labelSelectPizza.Name = "labelSelectPizza";
-            labelSelectPizza.Size = new Size(124, 23);
+            labelSelectPizza.Size = new Size(154, 28);
             labelSelectPizza.TabIndex = 1;
             labelSelectPizza.Text = "Select pizza 🍕";
             // 
@@ -77,7 +77,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(299, 9);
             label2.Name = "label2";
-            label2.Size = new Size(147, 23);
+            label2.Size = new Size(185, 28);
             label2.TabIndex = 3;
             label2.Text = "Lipiu's pizza store";
             // 
@@ -90,7 +90,7 @@
             labelKetchup.AutoSize = true;
             labelKetchup.Location = new Point(12, 305);
             labelKetchup.Name = "labelKetchup";
-            labelKetchup.Size = new Size(77, 23);
+            labelKetchup.Size = new Size(97, 28);
             labelKetchup.TabIndex = 4;
             labelKetchup.Text = "Ketchup?";
             // 
@@ -99,7 +99,7 @@
             checkBoxKetchup.AutoSize = true;
             checkBoxKetchup.Location = new Point(155, 305);
             checkBoxKetchup.Name = "checkBoxKetchup";
-            checkBoxKetchup.Size = new Size(53, 27);
+            checkBoxKetchup.Size = new Size(65, 32);
             checkBoxKetchup.TabIndex = 5;
             checkBoxKetchup.TabStop = false;
             checkBoxKetchup.Text = "yes";
@@ -111,7 +111,7 @@
             checkBoxSpicy.AutoSize = true;
             checkBoxSpicy.Location = new Point(155, 338);
             checkBoxSpicy.Name = "checkBoxSpicy";
-            checkBoxSpicy.Size = new Size(134, 27);
+            checkBoxSpicy.Size = new Size(165, 32);
             checkBoxSpicy.TabIndex = 6;
             checkBoxSpicy.Text = "make it spicy?";
             checkBoxSpicy.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(12, 409);
             button1.Name = "button1";
-            button1.Size = new Size(144, 30);
+            button1.Size = new Size(175, 35);
             button1.TabIndex = 7;
             button1.Text = "Go to checkout";
             button1.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             checkBoxNoKetchup.AutoSize = true;
             checkBoxNoKetchup.Location = new Point(244, 305);
             checkBoxNoKetchup.Name = "checkBoxNoKetchup";
-            checkBoxNoKetchup.Size = new Size(45, 27);
+            checkBoxNoKetchup.Size = new Size(55, 32);
             checkBoxNoKetchup.TabIndex = 8;
             checkBoxNoKetchup.Text = "no";
             checkBoxNoKetchup.UseVisualStyleBackColor = true;

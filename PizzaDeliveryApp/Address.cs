@@ -8,18 +8,12 @@ namespace PizzaDeliveryApp
 {
     internal class Address
     {
-        public string CityName { get; set; }
-        public string StreetName { get; set; }
-        public int AppartmentNumber { get; set; }
-        public int FloorNumber { get; set; }
+        public string fullAddress {  get; set; }
 
         public Address() { }
-        public Address(string cityName, string streetName, int appartmentNumber, int floorNumber)
+        public Address(string FullAddress)
         {
-            CityName = cityName;
-            StreetName = streetName;
-            AppartmentNumber = appartmentNumber;
-            FloorNumber = floorNumber;
+            this.fullAddress = FullAddress;
         }
     }
 }

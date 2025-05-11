@@ -87,7 +87,11 @@
             }
             else
             {
-                Form2 checkoutForm = new Form2();
+                Pizza pizza = new Pizza();
+                pizza.TypeOfPizza = comboBoxPizzaChoice.Text;
+                pizza.HasKetchup = checkBoxKetchup.Checked;
+                pizza.SpicyKetchup = checkBoxSpicy.Checked;
+                Form2 checkoutForm = new Form2(pizza);
                 errorProvider1.SetError(comboBoxPizzaChoice, "");
                 MessageBox.Show("Proceeding to checkout...");
                 checkoutForm.ShowDialog();
