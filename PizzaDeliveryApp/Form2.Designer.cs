@@ -51,8 +51,11 @@
             textBoxExpDate = new TextBox();
             textBoxCvv = new TextBox();
             labelCvv = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            serializationToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // labelCheckout
@@ -239,6 +242,19 @@
             labelCvv.TabIndex = 20;
             labelCvv.Text = "CVV";
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { serializationToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(161, 28);
+            // 
+            // serializationToolStripMenuItem
+            // 
+            serializationToolStripMenuItem.Name = "serializationToolStripMenuItem";
+            serializationToolStripMenuItem.Size = new Size(160, 24);
+            serializationToolStripMenuItem.Text = "Serialization";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
@@ -272,6 +288,7 @@
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -300,5 +317,7 @@
         private Label labelExpDate;
         private TextBox textBoxCardHolder;
         private Label labelCardHolder;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem serializationToolStripMenuItem;
     }
 }

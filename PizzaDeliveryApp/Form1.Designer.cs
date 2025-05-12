@@ -49,9 +49,12 @@
             pizzaToolStripMenuItem = new ToolStripMenuItem();
             labelSize = new Label();
             comboBoxPizzaSize = new ComboBox();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // comboBoxPizzaChoice
@@ -200,14 +203,14 @@
             // aboutPizzaToolStripMenuItem
             // 
             aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
-            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
+            aboutPizzaToolStripMenuItem.Size = new Size(189, 26);
             aboutPizzaToolStripMenuItem.Text = "App features";
             aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
             // 
             // pizzaToolStripMenuItem
             // 
             pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            pizzaToolStripMenuItem.Size = new Size(224, 26);
+            pizzaToolStripMenuItem.Size = new Size(189, 26);
             pizzaToolStripMenuItem.Text = "Pizza info";
             pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
             // 
@@ -229,11 +232,31 @@
             comboBoxPizzaSize.TabIndex = 11;
             comboBoxPizzaSize.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.BackColor = Color.FromArgb(255, 128, 128);
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 531);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(784, 30);
+            statusStrip1.TabIndex = 12;
+            statusStrip1.Text = "statusStrip1";
+            statusStrip1.ItemClicked += statusStrip1_ItemClicked;
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(182, 24);
+            toolStripStatusLabel1.Text = "Checkout page status";
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(784, 561);
+            Controls.Add(statusStrip1);
             Controls.Add(comboBoxPizzaSize);
             Controls.Add(labelSize);
             Controls.Add(checkBoxNoKetchup);
@@ -257,6 +280,8 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,5 +307,7 @@
         private ToolStripMenuItem pizzaToolStripMenuItem;
         private Label labelSize;
         private ComboBox comboBoxPizzaSize;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

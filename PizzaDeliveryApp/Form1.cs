@@ -40,7 +40,7 @@ namespace PizzaDeliveryApp
 
             comboBoxPizzaChoice.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPizzaSize.DropDownStyle = ComboBoxStyle.DropDownList;
-            
+
             comboBoxPizzaChoice.Width = 300;
             comboBoxPizzaSize.Width = 155;
         }
@@ -98,7 +98,7 @@ namespace PizzaDeliveryApp
             {
                 errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
             }
-            else if(comboBoxPizzaSize.SelectedItem == null)
+            else if (comboBoxPizzaSize.SelectedItem == null)
             {
                 errorProvider1.SetError(comboBoxPizzaSize, "Please select size of pizza!");
             }
@@ -109,9 +109,16 @@ namespace PizzaDeliveryApp
                 pizza.HasKetchup = checkBoxKetchup.Checked;
                 pizza.SpicyKetchup = checkBoxSpicy.Checked;
                 Form2 checkoutForm = new Form2(pizza);
-                errorProvider1.SetError(comboBoxPizzaChoice, "");
-                MessageBox.Show("Proceeding to checkout...");
+
+                //update status bar
+                toolStripStatusLabel1.Text = "Checkout page status - loaded!";
+
+                checkoutForm.FormClosed += (s, args) =>
+                {
+                    toolStripStatusLabel1.Text = "Checkout page status - not loaded";
+                };
                 checkoutForm.ShowDialog();
+                
             }
         }
 
@@ -202,6 +209,11 @@ namespace PizzaDeliveryApp
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
