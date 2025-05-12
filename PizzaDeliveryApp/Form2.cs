@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -173,15 +174,6 @@ namespace PizzaDeliveryApp
 
             //if all fields are valid display message
             MessageBox.Show("Order placed sucessfully!\nThank you and enjoy your pizza!!");
-
-            //Create client
-            Client client = new Client();
-            client.FullName = textBoxName.Text.Trim();
-            client.PhoneNumber = textBoxPhoneNumber.Text;
-
-            //Create address
-            Address address = new Address();
-            address.FullAddress = textBoxAddress.Text;
         }
 
         private void textBoxAddress_TextChanged(object sender, EventArgs e)
@@ -269,13 +261,41 @@ namespace PizzaDeliveryApp
 
         private void serializeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var address = new Address();
-            var client = new Client();
-
-            client.FullName = textBoxName.Text;
+            //Create client
+            Client client = new Client();
+            client.FullName = textBoxName.Text.Trim();
             client.PhoneNumber = textBoxPhoneNumber.Text;
+
+            //Payment info
+            PaymentInfo pay = null;
+            if (checkBoxCard.Checked)
+            {
+                pay = new PaymentInfo();
+                pay.CardHolder = textBoxCardHolder.Text;
+                pay.CardNumber = textBoxCardNumber.Text;
+                pay.ExpireDate = DateTime.Now;
+                pay.CVV = textBoxCvv.Text;
+            }
+
+            //Create address
+            Address address = new Address();
             address.FullAddress = textBoxAddress.Text;
-            
+
+            var orderData = new OrderData
+            {
+                Pizza = pizza,
+                Client = client,
+                Address = address,
+                PaymentInfo = pay
+            };
+
+            var json = JsonSerializer.Serialize(orderData);
+            using (StreamWriter sw = new StreamWriter(File.Create("OrderDetails.json")))
+            {
+                sw.WriteLine(json);
+            }
+            MessageBox.Show("Order details file created successfully!");
+
         }
     }
 }

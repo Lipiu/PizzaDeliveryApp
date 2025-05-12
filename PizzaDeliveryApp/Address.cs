@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PizzaDeliveryApp
 {
-    internal class Address
+    public class Address
     {
         public string FullAddress {  get; set; }
 

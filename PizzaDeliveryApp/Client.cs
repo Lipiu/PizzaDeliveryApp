@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PizzaDeliveryApp
 {
-    internal class Client
+    public class Client
     {
         public string FullName {  get; set; }
         public string PhoneNumber { get; set; }
