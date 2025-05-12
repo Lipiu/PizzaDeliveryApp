@@ -8,12 +8,12 @@ namespace PizzaDeliveryApp
 {
     internal class Address
     {
-        public string fullAddress {  get; set; }
+        public string FullAddress {  get; set; }
 
         public Address() { }
-        public Address(string FullAddress)
+        public Address(string fullAddress)
         {
-            this.fullAddress = FullAddress;
+            this.FullAddress = fullAddress;
         }
     }
 }

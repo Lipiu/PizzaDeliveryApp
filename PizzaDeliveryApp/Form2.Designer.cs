@@ -286,13 +286,14 @@
             // serializeToolStripMenuItem
             // 
             serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
-            serializeToolStripMenuItem.Size = new Size(171, 26);
+            serializeToolStripMenuItem.Size = new Size(224, 26);
             serializeToolStripMenuItem.Text = "Serialize";
+            serializeToolStripMenuItem.Click += serializeToolStripMenuItem_Click;
             // 
             // deserializeToolStripMenuItem
             // 
             deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
-            deserializeToolStripMenuItem.Size = new Size(171, 26);
+            deserializeToolStripMenuItem.Size = new Size(224, 26);
             deserializeToolStripMenuItem.Text = "Deserialize";
             // 
             // xMLToolStripMenuItem
@@ -306,13 +307,13 @@
             // serializeToolStripMenuItem1
             // 
             serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
-            serializeToolStripMenuItem1.Size = new Size(224, 26);
+            serializeToolStripMenuItem1.Size = new Size(171, 26);
             serializeToolStripMenuItem1.Text = "Serialize";
             // 
             // deserializeToolStripMenuItem1
             // 
             deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
-            deserializeToolStripMenuItem1.Size = new Size(224, 26);
+            deserializeToolStripMenuItem1.Size = new Size(171, 26);
             deserializeToolStripMenuItem1.Text = "Deserialize";
             // 
             // exportToTxtToolStripMenuItem

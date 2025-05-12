@@ -8,8 +8,7 @@ namespace PizzaDeliveryApp
 {
     internal class Client
     {
-        public string FirstName {  get; set; }
-        public string LastName { get; set; }
+        public string FullName {  get; set; }
         public string PhoneNumber { get; set; }
         public string ClientId { get; set; }
         public static int NumberOfClients;
@@ -18,10 +17,9 @@ namespace PizzaDeliveryApp
             NumberOfClients += 1;
         }
 
-        public Client(string firstName, string lastName, string phoneNumber, string clientId)
+        public Client(string fullName, string phoneNumber, string clientId)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            this.FullName = fullName;
             this.PhoneNumber = phoneNumber;
             this.ClientId = clientId;
 

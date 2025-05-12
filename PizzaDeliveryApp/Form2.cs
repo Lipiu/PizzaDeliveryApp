@@ -174,23 +174,14 @@ namespace PizzaDeliveryApp
             //if all fields are valid display message
             MessageBox.Show("Order placed sucessfully!\nThank you and enjoy your pizza!!");
 
-            string[] nameParts = textBoxName.Text.Trim().Split(' ');
-            string firstName = nameParts[0];
-            string lastName = "";
-            if (nameParts.Length > 1)
-            {
-                lastName = nameParts[1];
-            }
-
             //Create client
             Client client = new Client();
-            client.FirstName = firstName;
-            client.LastName = lastName;
+            client.FullName = textBoxName.Text.Trim();
             client.PhoneNumber = textBoxPhoneNumber.Text;
 
             //Create address
             Address address = new Address();
-            address.fullAddress = textBoxAddress.Text;
+            address.FullAddress = textBoxAddress.Text;
         }
 
         private void textBoxAddress_TextChanged(object sender, EventArgs e)
@@ -266,7 +257,7 @@ namespace PizzaDeliveryApp
 
         private void checkBoxCash_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBoxCash.Checked == true)
+            if (checkBoxCash.Checked == true)
             {
                 checkBoxCard.Enabled = false;
             }
@@ -274,6 +265,17 @@ namespace PizzaDeliveryApp
             {
                 checkBoxCard.Enabled = true;
             }
+        }
+
+        private void serializeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var address = new Address();
+            var client = new Client();
+
+            client.FullName = textBoxName.Text;
+            client.PhoneNumber = textBoxPhoneNumber.Text;
+            address.FullAddress = textBoxAddress.Text;
+            
         }
     }
 }
