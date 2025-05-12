@@ -297,5 +297,48 @@ namespace PizzaDeliveryApp
             MessageBox.Show("Order details file created successfully!");
 
         }
+
+        private void deserializeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("OrderDetails.json"))
+            {
+                using (StreamReader sr = new StreamReader(File.OpenRead("OrderDetails.json")))
+                {
+                    try
+                    {
+                        var json = sr.ReadToEnd();
+                        OrderData order = JsonSerializer.Deserialize<OrderData>(json);
+
+                        textBoxName.Text = order.Client.FullName;
+                        textBoxPhoneNumber.Text = order.Client.PhoneNumber;
+                        textBoxAddress.Text = order.Address.FullAddress;
+
+                        if (order.PaymentInfo != null)
+                        {
+                            checkBoxCard.Checked = true;
+                            textBoxCardHolder.Text = order.PaymentInfo.CardHolder;
+                            textBoxCardNumber.Text = order.PaymentInfo.CardNumber;
+                            textBoxExpDate.Text = order.PaymentInfo.ExpireDate.ToString("MM/yy");
+                            textBoxCvv.Text = order.PaymentInfo.CVV;
+                        }
+                        else
+                        {
+                            checkBoxCash.Checked = true;
+                        }
+
+                        MessageBox.Show("Order details deserialized successfully!");
+                    }
+                    catch (JsonException)
+                    {
+                        MessageBox.Show("Error while deserializing order data.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No saved order found.");
+            }
+
+        }
     }
 }

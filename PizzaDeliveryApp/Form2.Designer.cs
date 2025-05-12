@@ -295,6 +295,7 @@
             deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
             deserializeToolStripMenuItem.Size = new Size(224, 26);
             deserializeToolStripMenuItem.Text = "Deserialize";
+            deserializeToolStripMenuItem.Click += deserializeToolStripMenuItem_Click;
             // 
             // xMLToolStripMenuItem
             // 
