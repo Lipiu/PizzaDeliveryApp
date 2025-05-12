@@ -51,6 +51,9 @@
             comboBoxPizzaSize = new ComboBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            xMLToolStripMenuItem = new ToolStripMenuItem();
+            serializeToolStripMenuItem1 = new ToolStripMenuItem();
+            deserializeToolStripMenuItem1 = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -158,7 +161,7 @@
             // 
             menuStrip1.BackColor = Color.FromArgb(255, 128, 128);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { jSONSERIALIZATIONToolStripMenuItem, aboutAppToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { jSONSERIALIZATIONToolStripMenuItem, xMLToolStripMenuItem, aboutAppToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(784, 29);
@@ -171,8 +174,8 @@
             jSONSERIALIZATIONToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem, deserializeToolStripMenuItem });
             jSONSERIALIZATIONToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             jSONSERIALIZATIONToolStripMenuItem.Name = "jSONSERIALIZATIONToolStripMenuItem";
-            jSONSERIALIZATIONToolStripMenuItem.Size = new Size(202, 25);
-            jSONSERIALIZATIONToolStripMenuItem.Text = "JSON SERIALIZATION";
+            jSONSERIALIZATIONToolStripMenuItem.Size = new Size(75, 25);
+            jSONSERIALIZATIONToolStripMenuItem.Text = "JSON ";
             jSONSERIALIZATIONToolStripMenuItem.Click += jSONSERIALIZATIONToolStripMenuItem_Click;
             // 
             // serializeToolStripMenuItem
@@ -203,14 +206,14 @@
             // aboutPizzaToolStripMenuItem
             // 
             aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
-            aboutPizzaToolStripMenuItem.Size = new Size(189, 26);
+            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
             aboutPizzaToolStripMenuItem.Text = "App features";
             aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
             // 
             // pizzaToolStripMenuItem
             // 
             pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            pizzaToolStripMenuItem.Size = new Size(189, 26);
+            pizzaToolStripMenuItem.Size = new Size(224, 26);
             pizzaToolStripMenuItem.Text = "Pizza info";
             pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
             // 
@@ -250,6 +253,26 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(182, 24);
             toolStripStatusLabel1.Text = "Checkout page status";
+            // 
+            // xMLToolStripMenuItem
+            // 
+            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem1, deserializeToolStripMenuItem1 });
+            xMLToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            xMLToolStripMenuItem.Size = new Size(56, 25);
+            xMLToolStripMenuItem.Text = "XML";
+            // 
+            // serializeToolStripMenuItem1
+            // 
+            serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
+            serializeToolStripMenuItem1.Size = new Size(224, 26);
+            serializeToolStripMenuItem1.Text = "Serialize";
+            // 
+            // deserializeToolStripMenuItem1
+            // 
+            deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
+            deserializeToolStripMenuItem1.Size = new Size(224, 26);
+            deserializeToolStripMenuItem1.Text = "Deserialize";
             // 
             // Form1
             // 
@@ -309,5 +332,8 @@
         private ComboBox comboBoxPizzaSize;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripMenuItem xMLToolStripMenuItem;
+        private ToolStripMenuItem serializeToolStripMenuItem1;
+        private ToolStripMenuItem deserializeToolStripMenuItem1;
     }
 }

@@ -15,6 +15,7 @@ namespace PizzaDeliveryApp
             string[] PizzaOptions = new string[]
             {
                 "Pepperoni - 40 RON",
+                "Capricciosa - 40 RON",
                 "Pepperoni & Feta - 45 RON",
                 "Margherita - 35 RON",
                 "Diavola - 38 RON",
@@ -111,7 +112,7 @@ namespace PizzaDeliveryApp
                 Form2 checkoutForm = new Form2(pizza);
 
                 //update status bar
-                toolStripStatusLabel1.Text = "Checkout page status - loaded!";
+                toolStripStatusLabel1.Text = "Checkout page status - loaded";
 
                 checkoutForm.FormClosed += (s, args) =>
                 {

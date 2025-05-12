@@ -53,15 +53,24 @@
             labelCvv = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             serializationToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            serializationToolStripMenuItem1 = new ToolStripMenuItem();
+            serializeToolStripMenuItem = new ToolStripMenuItem();
+            deserializeToolStripMenuItem = new ToolStripMenuItem();
+            xMLToolStripMenuItem = new ToolStripMenuItem();
+            serializeToolStripMenuItem1 = new ToolStripMenuItem();
+            deserializeToolStripMenuItem1 = new ToolStripMenuItem();
+            exportToTxtToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             contextMenuStrip1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // labelCheckout
             // 
             labelCheckout.AutoSize = true;
-            labelCheckout.Location = new Point(278, 9);
+            labelCheckout.Location = new Point(266, 29);
             labelCheckout.Margin = new Padding(4, 0, 4, 0);
             labelCheckout.Name = "labelCheckout";
             labelCheckout.Size = new Size(295, 28);
@@ -72,7 +81,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(313, 35);
+            pictureBox1.Location = new Point(329, 60);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(156, 160);
             pictureBox1.TabIndex = 1;
@@ -255,12 +264,71 @@
             serializationToolStripMenuItem.Size = new Size(160, 24);
             serializationToolStripMenuItem.Text = "Serialization";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.FromArgb(255, 128, 128);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { serializationToolStripMenuItem1, xMLToolStripMenuItem, exportToTxtToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(784, 29);
+            menuStrip1.TabIndex = 21;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // serializationToolStripMenuItem1
+            // 
+            serializationToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem, deserializeToolStripMenuItem });
+            serializationToolStripMenuItem1.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            serializationToolStripMenuItem1.Name = "serializationToolStripMenuItem1";
+            serializationToolStripMenuItem1.Size = new Size(68, 25);
+            serializationToolStripMenuItem1.Text = "JSON";
+            // 
+            // serializeToolStripMenuItem
+            // 
+            serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
+            serializeToolStripMenuItem.Size = new Size(171, 26);
+            serializeToolStripMenuItem.Text = "Serialize";
+            // 
+            // deserializeToolStripMenuItem
+            // 
+            deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
+            deserializeToolStripMenuItem.Size = new Size(171, 26);
+            deserializeToolStripMenuItem.Text = "Deserialize";
+            // 
+            // xMLToolStripMenuItem
+            // 
+            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem1, deserializeToolStripMenuItem1 });
+            xMLToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            xMLToolStripMenuItem.Size = new Size(56, 25);
+            xMLToolStripMenuItem.Text = "XML";
+            // 
+            // serializeToolStripMenuItem1
+            // 
+            serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
+            serializeToolStripMenuItem1.Size = new Size(224, 26);
+            serializeToolStripMenuItem1.Text = "Serialize";
+            // 
+            // deserializeToolStripMenuItem1
+            // 
+            deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
+            deserializeToolStripMenuItem1.Size = new Size(224, 26);
+            deserializeToolStripMenuItem1.Text = "Deserialize";
+            // 
+            // exportToTxtToolStripMenuItem
+            // 
+            exportToTxtToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exportToTxtToolStripMenuItem.Name = "exportToTxtToolStripMenuItem";
+            exportToTxtToolStripMenuItem.Size = new Size(124, 25);
+            exportToTxtToolStripMenuItem.Text = "Export to txt";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(784, 561);
+            Controls.Add(menuStrip1);
             Controls.Add(labelCvv);
             Controls.Add(textBoxCvv);
             Controls.Add(textBoxExpDate);
@@ -282,6 +350,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(labelCheckout);
             Font = new Font("Comic Sans MS", 12F);
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form2";
             Text = "Form2";
@@ -289,6 +358,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             contextMenuStrip1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -319,5 +390,13 @@
         private Label labelCardHolder;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem serializationToolStripMenuItem;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem serializationToolStripMenuItem1;
+        private ToolStripMenuItem serializeToolStripMenuItem;
+        private ToolStripMenuItem deserializeToolStripMenuItem;
+        private ToolStripMenuItem xMLToolStripMenuItem;
+        private ToolStripMenuItem serializeToolStripMenuItem1;
+        private ToolStripMenuItem deserializeToolStripMenuItem1;
+        private ToolStripMenuItem exportToTxtToolStripMenuItem;
     }
 }
