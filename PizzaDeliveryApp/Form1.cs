@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Xml.Serialization;
 
 namespace PizzaDeliveryApp
 {
@@ -119,7 +120,7 @@ namespace PizzaDeliveryApp
                     toolStripStatusLabel1.Text = "Checkout page status - not loaded";
                 };
                 checkoutForm.ShowDialog();
-                
+
             }
         }
 
@@ -146,7 +147,7 @@ namespace PizzaDeliveryApp
             {
                 sw.WriteLine(json);
             }
-            MessageBox.Show("Pizza order serialized successfully!");
+            MessageBox.Show("Pizza order serialized(json) successfully!");
         }
 
         private void deserializeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,7 +165,7 @@ namespace PizzaDeliveryApp
                         checkBoxSpicy.Checked = pizza.SpicyKetchup;
                         comboBoxPizzaSize.SelectedItem = pizza.PizzaSize;
 
-                        MessageBox.Show("Pizza order deserialized!");
+                        MessageBox.Show("Pizza order deserialized(json) successfully!");
                     }
                     catch (JsonException ex)
                     {
@@ -217,6 +218,41 @@ namespace PizzaDeliveryApp
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void serializeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Pizza pizza = new Pizza();
+            pizza.TypeOfPizza = comboBoxPizzaChoice.SelectedItem.ToString();
+            pizza.PizzaSize = comboBoxPizzaSize.SelectedItem.ToString();
+            pizza.HasKetchup = checkBoxKetchup.Checked;
+            pizza.SpicyKetchup = checkBoxSpicy.Checked;
+
+            XmlSerializer serializer = new XmlSerializer(typeof(Pizza));
+            using (FileStream stream = File.Create("SerializedPizzaXML.xml")) serializer.Serialize(stream, pizza);
+            MessageBox.Show("Serialized to xml");
+        }
+
+        private void deserializeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("SerializedPizzaXML.xml"))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(Pizza));
+                using (FileStream stream = File.OpenRead("SerializedPizzaXML.xml"))
+                {
+                    Pizza pizza = (Pizza)serializer.Deserialize(stream);
+                    comboBoxPizzaChoice.SelectedItem = pizza.TypeOfPizza;
+                    comboBoxPizzaSize.SelectedItem = pizza.PizzaSize;
+                    checkBoxKetchup.Checked = pizza.HasKetchup;
+                    checkBoxSpicy.Checked = pizza.SpicyKetchup;
+
+                    MessageBox.Show("Deserialized from XML!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No saved pizza order found!");
+            }
         }
     }
 }

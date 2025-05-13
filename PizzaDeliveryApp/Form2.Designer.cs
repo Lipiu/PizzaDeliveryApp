@@ -58,8 +58,8 @@
             serializeToolStripMenuItem = new ToolStripMenuItem();
             deserializeToolStripMenuItem = new ToolStripMenuItem();
             xMLToolStripMenuItem = new ToolStripMenuItem();
-            serializeToolStripMenuItem1 = new ToolStripMenuItem();
-            deserializeToolStripMenuItem1 = new ToolStripMenuItem();
+            serializeXML = new ToolStripMenuItem();
+            deserializeXML = new ToolStripMenuItem();
             exportToTxtToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
@@ -286,36 +286,37 @@
             // serializeToolStripMenuItem
             // 
             serializeToolStripMenuItem.Name = "serializeToolStripMenuItem";
-            serializeToolStripMenuItem.Size = new Size(224, 26);
+            serializeToolStripMenuItem.Size = new Size(171, 26);
             serializeToolStripMenuItem.Text = "Serialize";
             serializeToolStripMenuItem.Click += serializeToolStripMenuItem_Click;
             // 
             // deserializeToolStripMenuItem
             // 
             deserializeToolStripMenuItem.Name = "deserializeToolStripMenuItem";
-            deserializeToolStripMenuItem.Size = new Size(224, 26);
+            deserializeToolStripMenuItem.Size = new Size(171, 26);
             deserializeToolStripMenuItem.Text = "Deserialize";
             deserializeToolStripMenuItem.Click += deserializeToolStripMenuItem_Click;
             // 
             // xMLToolStripMenuItem
             // 
-            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem1, deserializeToolStripMenuItem1 });
+            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeXML, deserializeXML });
             xMLToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             xMLToolStripMenuItem.Size = new Size(56, 25);
             xMLToolStripMenuItem.Text = "XML";
             // 
-            // serializeToolStripMenuItem1
+            // serializeXML
             // 
-            serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
-            serializeToolStripMenuItem1.Size = new Size(171, 26);
-            serializeToolStripMenuItem1.Text = "Serialize";
+            serializeXML.Name = "serializeXML";
+            serializeXML.Size = new Size(224, 26);
+            serializeXML.Text = "Serialize";
+            serializeXML.Click += serializeXML_Click;
             // 
-            // deserializeToolStripMenuItem1
+            // deserializeXML
             // 
-            deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
-            deserializeToolStripMenuItem1.Size = new Size(171, 26);
-            deserializeToolStripMenuItem1.Text = "Deserialize";
+            deserializeXML.Name = "deserializeXML";
+            deserializeXML.Size = new Size(224, 26);
+            deserializeXML.Text = "Deserialize";
             // 
             // exportToTxtToolStripMenuItem
             // 
@@ -397,8 +398,8 @@
         private ToolStripMenuItem serializeToolStripMenuItem;
         private ToolStripMenuItem deserializeToolStripMenuItem;
         private ToolStripMenuItem xMLToolStripMenuItem;
-        private ToolStripMenuItem serializeToolStripMenuItem1;
-        private ToolStripMenuItem deserializeToolStripMenuItem1;
+        private ToolStripMenuItem serializeXML;
+        private ToolStripMenuItem deserializeXML;
         private ToolStripMenuItem exportToTxtToolStripMenuItem;
     }
 }

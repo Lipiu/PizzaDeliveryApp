@@ -44,6 +44,9 @@
             jSONSERIALIZATIONToolStripMenuItem = new ToolStripMenuItem();
             serializeToolStripMenuItem = new ToolStripMenuItem();
             deserializeToolStripMenuItem = new ToolStripMenuItem();
+            xMLToolStripMenuItem = new ToolStripMenuItem();
+            serializeToolStripMenuItem1 = new ToolStripMenuItem();
+            deserializeToolStripMenuItem1 = new ToolStripMenuItem();
             aboutAppToolStripMenuItem = new ToolStripMenuItem();
             aboutPizzaToolStripMenuItem = new ToolStripMenuItem();
             pizzaToolStripMenuItem = new ToolStripMenuItem();
@@ -51,9 +54,6 @@
             comboBoxPizzaSize = new ComboBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            xMLToolStripMenuItem = new ToolStripMenuItem();
-            serializeToolStripMenuItem1 = new ToolStripMenuItem();
-            deserializeToolStripMenuItem1 = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -194,6 +194,28 @@
             deserializeToolStripMenuItem.Text = "Deserialize";
             deserializeToolStripMenuItem.Click += deserializeToolStripMenuItem_Click;
             // 
+            // xMLToolStripMenuItem
+            // 
+            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem1, deserializeToolStripMenuItem1 });
+            xMLToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            xMLToolStripMenuItem.Size = new Size(56, 25);
+            xMLToolStripMenuItem.Text = "XML";
+            // 
+            // serializeToolStripMenuItem1
+            // 
+            serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
+            serializeToolStripMenuItem1.Size = new Size(224, 26);
+            serializeToolStripMenuItem1.Text = "Serialize";
+            serializeToolStripMenuItem1.Click += serializeToolStripMenuItem1_Click;
+            // 
+            // deserializeToolStripMenuItem1
+            // 
+            deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
+            deserializeToolStripMenuItem1.Size = new Size(224, 26);
+            deserializeToolStripMenuItem1.Text = "Deserialize";
+            deserializeToolStripMenuItem1.Click += deserializeToolStripMenuItem1_Click;
+            // 
             // aboutAppToolStripMenuItem
             // 
             aboutAppToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutPizzaToolStripMenuItem, pizzaToolStripMenuItem });
@@ -206,14 +228,14 @@
             // aboutPizzaToolStripMenuItem
             // 
             aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
-            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
+            aboutPizzaToolStripMenuItem.Size = new Size(189, 26);
             aboutPizzaToolStripMenuItem.Text = "App features";
             aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
             // 
             // pizzaToolStripMenuItem
             // 
             pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            pizzaToolStripMenuItem.Size = new Size(224, 26);
+            pizzaToolStripMenuItem.Size = new Size(189, 26);
             pizzaToolStripMenuItem.Text = "Pizza info";
             pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
             // 
@@ -253,26 +275,6 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(182, 24);
             toolStripStatusLabel1.Text = "Checkout page status";
-            // 
-            // xMLToolStripMenuItem
-            // 
-            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { serializeToolStripMenuItem1, deserializeToolStripMenuItem1 });
-            xMLToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            xMLToolStripMenuItem.Size = new Size(56, 25);
-            xMLToolStripMenuItem.Text = "XML";
-            // 
-            // serializeToolStripMenuItem1
-            // 
-            serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
-            serializeToolStripMenuItem1.Size = new Size(224, 26);
-            serializeToolStripMenuItem1.Text = "Serialize";
-            // 
-            // deserializeToolStripMenuItem1
-            // 
-            deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
-            deserializeToolStripMenuItem1.Size = new Size(224, 26);
-            deserializeToolStripMenuItem1.Text = "Deserialize";
             // 
             // Form1
             // 
