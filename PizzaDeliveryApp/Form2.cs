@@ -420,7 +420,7 @@ namespace PizzaDeliveryApp
             saveFileDialog.Filter = "Text File | *.txt";
             saveFileDialog.Title = "Save as text file";
 
-            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 using (StreamWriter sw = File.CreateText(saveFileDialog.FileName))
                 {
@@ -458,7 +458,7 @@ namespace PizzaDeliveryApp
                     sw.WriteLine("Address: " + order.Address.FullAddress);
                     sw.WriteLine("Payment method: " + order.PaymentMethod);
 
-                    if(order.PaymentInfo != null)
+                    if (order.PaymentInfo != null)
                     {
                         sw.WriteLine("Card holder: " + order.PaymentInfo.CardHolder);
                         sw.WriteLine("Card number: " + order.PaymentInfo.CardNumber);
@@ -474,6 +474,22 @@ namespace PizzaDeliveryApp
                     MessageBox.Show($"Order details exported to {saveFileDialog.FileName}");
                 }
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string aboutText = "- This is the checkout form!\n" +
+                "- Support for JSON serialization and deserialization\n" +
+                "- Support for shortcuts:\n" +
+                "    -> CTRL+S - Serialization JSON\n" +
+                "    -> CTRL+D - Deserialization JSON\n" +
+                "- Support for XML serialization and deserialization\n" +
+                "    -> CTRL+SHIFT+S - Serialization XML\n" +
+                "    -> CTRL+SHIFT+D - Deserialization XML\n" +
+                "- Option to export order to text file\n" +
+                "    -> CTRL+T - Export to text file";
+
+            MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }
     }
 }

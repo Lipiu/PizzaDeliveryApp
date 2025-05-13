@@ -60,6 +60,7 @@
             xMLToolStripMenuItem = new ToolStripMenuItem();
             serializeXML = new ToolStripMenuItem();
             deserializeXML = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             exportToTxtToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
@@ -268,7 +269,7 @@
             // 
             menuStrip1.BackColor = Color.FromArgb(255, 128, 128);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { serializationToolStripMenuItem1, xMLToolStripMenuItem, exportToTxtToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { serializationToolStripMenuItem1, xMLToolStripMenuItem, exportToTxtToolStripMenuItem, aboutToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(784, 29);
@@ -308,21 +309,32 @@
             // serializeXML
             // 
             serializeXML.Name = "serializeXML";
-            serializeXML.Size = new Size(224, 26);
+            serializeXML.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            serializeXML.Size = new Size(275, 26);
             serializeXML.Text = "Serialize";
             serializeXML.Click += serializeXML_Click;
             // 
             // deserializeXML
             // 
             deserializeXML.Name = "deserializeXML";
-            deserializeXML.Size = new Size(224, 26);
+            deserializeXML.ShortcutKeys = Keys.Control | Keys.Shift | Keys.D;
+            deserializeXML.Size = new Size(275, 26);
             deserializeXML.Text = "Deserialize";
             deserializeXML.Click += deserializeXML_Click;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(67, 25);
+            aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // exportToTxtToolStripMenuItem
             // 
             exportToTxtToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             exportToTxtToolStripMenuItem.Name = "exportToTxtToolStripMenuItem";
+            exportToTxtToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.T;
             exportToTxtToolStripMenuItem.Size = new Size(124, 25);
             exportToTxtToolStripMenuItem.Text = "Export to txt";
             exportToTxtToolStripMenuItem.Click += exportToTxtToolStripMenuItem_Click;
@@ -403,5 +415,6 @@
         private ToolStripMenuItem serializeXML;
         private ToolStripMenuItem deserializeXML;
         private ToolStripMenuItem exportToTxtToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
