@@ -205,14 +205,16 @@
             // serializeToolStripMenuItem1
             // 
             serializeToolStripMenuItem1.Name = "serializeToolStripMenuItem1";
-            serializeToolStripMenuItem1.Size = new Size(224, 26);
+            serializeToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            serializeToolStripMenuItem1.Size = new Size(275, 26);
             serializeToolStripMenuItem1.Text = "Serialize";
             serializeToolStripMenuItem1.Click += serializeToolStripMenuItem1_Click;
             // 
             // deserializeToolStripMenuItem1
             // 
             deserializeToolStripMenuItem1.Name = "deserializeToolStripMenuItem1";
-            deserializeToolStripMenuItem1.Size = new Size(224, 26);
+            deserializeToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.Shift | Keys.D;
+            deserializeToolStripMenuItem1.Size = new Size(275, 26);
             deserializeToolStripMenuItem1.Text = "Deserialize";
             deserializeToolStripMenuItem1.Click += deserializeToolStripMenuItem1_Click;
             // 
@@ -228,14 +230,14 @@
             // aboutPizzaToolStripMenuItem
             // 
             aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
-            aboutPizzaToolStripMenuItem.Size = new Size(189, 26);
+            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
             aboutPizzaToolStripMenuItem.Text = "App features";
             aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
             // 
             // pizzaToolStripMenuItem
             // 
             pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            pizzaToolStripMenuItem.Size = new Size(189, 26);
+            pizzaToolStripMenuItem.Size = new Size(224, 26);
             pizzaToolStripMenuItem.Text = "Pizza info";
             pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
             // 

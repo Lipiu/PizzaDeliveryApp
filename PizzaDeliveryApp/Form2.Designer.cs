@@ -317,6 +317,7 @@
             deserializeXML.Name = "deserializeXML";
             deserializeXML.Size = new Size(224, 26);
             deserializeXML.Text = "Deserialize";
+            deserializeXML.Click += deserializeXML_Click;
             // 
             // exportToTxtToolStripMenuItem
             // 

@@ -12,5 +12,16 @@ namespace PizzaDeliveryApp
         public Client Client { get; set; }
         public Address Address { get; set; }
         public PaymentInfo PaymentInfo { get; set; }
+        public string PaymentMethod { get; set; }
+
+        public OrderData() { }
+        public OrderData(Pizza pizza, Client client, Address address, PaymentInfo paymentInfo, string paymentMethod)
+        {
+            Pizza = pizza;
+            Client = client;
+            Address = address;
+            PaymentInfo = paymentInfo;
+            PaymentMethod = paymentMethod;
+        }
     }
 }

@@ -119,6 +119,7 @@ namespace PizzaDeliveryApp
                 {
                     toolStripStatusLabel1.Text = "Checkout page status - not loaded";
                 };
+                MessageBox.Show("Proceeding to checkout...");
                 checkoutForm.ShowDialog();
 
             }
@@ -189,8 +190,11 @@ namespace PizzaDeliveryApp
             string aboutText = "- This app allows people to order pizza with optional ketchup (spicy/not spicy)\n" +
                 "- Support for JSON serialization and deserialization\n" +
                 "- Support for shortcuts:\n" +
-                "    -> CTRL+S - Serialization\n" +
-                "    -> CTRL+D - Deserialization";
+                "    -> CTRL+S - Serialization JSON\n" +
+                "    -> CTRL+D - Deserialization JSON\n" +
+                "- Support for XML serialization and deserialization\n" +
+                "    -> CTRL+SHIFT+S - Serialization XML\n" +
+                "    -> CTRL+SHIFT+D - Deserialization XML";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }
@@ -230,7 +234,7 @@ namespace PizzaDeliveryApp
 
             XmlSerializer serializer = new XmlSerializer(typeof(Pizza));
             using (FileStream stream = File.Create("SerializedPizzaXML.xml")) serializer.Serialize(stream, pizza);
-            MessageBox.Show("Serialized to xml");
+            MessageBox.Show("Serialized to XML!");
         }
 
         private void deserializeToolStripMenuItem1_Click(object sender, EventArgs e)

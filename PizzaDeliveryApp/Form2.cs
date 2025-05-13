@@ -331,20 +331,87 @@ namespace PizzaDeliveryApp
                     }
                     catch (JsonException)
                     {
-                        MessageBox.Show("Error while deserializing order data.");
+                        MessageBox.Show("Error while deserializing order data!");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No saved order found.");
+                MessageBox.Show("No saved order found!");
             }
 
         }
 
         private void serializeXML_Click(object sender, EventArgs e)
         {
-            
+            OrderData orderData = new OrderData();
+            orderData.Client = new Client()
+            {
+                FullName = textBoxName.Text,
+                PhoneNumber = textBoxPhoneNumber.Text
+            };
+
+            if (checkBoxCard.Checked)
+            {
+                orderData.PaymentMethod = "Card";
+                orderData.PaymentInfo = new PaymentInfo()
+                {
+                    CardHolder = textBoxCardHolder.Text,
+                    CardNumber = textBoxCardNumber.Text,
+                    ExpireDate = DateTime.Parse(textBoxExpDate.Text),
+                    CVV = textBoxCvv.Text
+                };
+            }
+            else if (checkBoxCash.Checked)
+            {
+                orderData.PaymentMethod = "Cash";
+                orderData.PaymentInfo = null;
+            }
+
+            orderData.Address = new Address()
+            {
+                FullAddress = textBoxAddress.Text
+            };
+            XmlSerializer serializer = new XmlSerializer(typeof(OrderData));
+            using (FileStream stream = File.Create("SerializedOrderXML.xml"))
+            {
+                serializer.Serialize(stream, orderData);
+            }
+            MessageBox.Show("Order serialized to XML!");
+        }
+
+        private void deserializeXML_Click(object sender, EventArgs e)
+        {
+            if(File.Exists("SerializedOrderXML.xml"))
+            {
+                XmlSerializer serializer = new XmlSerializer (typeof(OrderData));
+                using (FileStream stream = File.OpenRead("SerializedOrderXML.xml"))
+                {
+                    OrderData orderData = (OrderData)serializer.Deserialize(stream);
+                    textBoxName.Text = orderData.Client.FullName;
+                    textBoxPhoneNumber.Text = orderData.Client.PhoneNumber;
+                    textBoxAddress.Text = orderData.Address.FullAddress;
+
+                    if(orderData.PaymentMethod == "Card")
+                    {
+                        checkBoxCard.Checked = true;
+                        textBoxCardHolder.Text = orderData.PaymentInfo.CardHolder;
+                        textBoxCardNumber.Text = orderData.PaymentInfo.CardNumber;
+                        textBoxExpDate.Text = orderData.PaymentInfo.ExpireDate.ToString("MM/yy");
+                        textBoxCvv.Text = orderData.PaymentInfo.CVV;
+                    }
+                    else
+                    {
+                        checkBoxCash.Checked = true;
+                        checkBoxCard.Checked = false;
+                    }
+                    MessageBox.Show("Order deserialized from XML!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No saved order found!");
+            }
         }
     }
 }
