@@ -382,9 +382,9 @@ namespace PizzaDeliveryApp
 
         private void deserializeXML_Click(object sender, EventArgs e)
         {
-            if(File.Exists("SerializedOrderXML.xml"))
+            if (File.Exists("SerializedOrderXML.xml"))
             {
-                XmlSerializer serializer = new XmlSerializer (typeof(OrderData));
+                XmlSerializer serializer = new XmlSerializer(typeof(OrderData));
                 using (FileStream stream = File.OpenRead("SerializedOrderXML.xml"))
                 {
                     OrderData orderData = (OrderData)serializer.Deserialize(stream);
@@ -392,7 +392,7 @@ namespace PizzaDeliveryApp
                     textBoxPhoneNumber.Text = orderData.Client.PhoneNumber;
                     textBoxAddress.Text = orderData.Address.FullAddress;
 
-                    if(orderData.PaymentMethod == "Card")
+                    if (orderData.PaymentMethod == "Card")
                     {
                         checkBoxCard.Checked = true;
                         textBoxCardHolder.Text = orderData.PaymentInfo.CardHolder;
@@ -411,6 +411,68 @@ namespace PizzaDeliveryApp
             else
             {
                 MessageBox.Show("No saved order found!");
+            }
+        }
+
+        private void exportToTxtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text File | *.txt";
+            saveFileDialog.Title = "Save as text file";
+
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = File.CreateText(saveFileDialog.FileName))
+                {
+                    OrderData order = new OrderData();
+                    order.Client = new Client()
+                    {
+                        FullName = textBoxName.Text.Trim(),
+                        PhoneNumber = textBoxPhoneNumber.Text
+                    };
+
+                    if (checkBoxCard.Checked)
+                    {
+                        order.PaymentMethod = "Card";
+                        order.PaymentInfo = new PaymentInfo()
+                        {
+                            CardHolder = textBoxCardHolder.Text,
+                            CardNumber = textBoxCardNumber.Text,
+                            ExpireDate = DateTime.Parse(textBoxExpDate.Text),
+                            CVV = textBoxCvv.Text
+                        };
+                    }
+                    else
+                    {
+                        order.PaymentMethod = "Cash";
+                        order.PaymentInfo = null;
+                    }
+
+                    order.Address = new Address()
+                    {
+                        FullAddress = textBoxAddress.Text
+                    };
+
+                    sw.WriteLine("Full name: " + order.Client.FullName);
+                    sw.WriteLine("Phone number: " + order.Client.PhoneNumber);
+                    sw.WriteLine("Address: " + order.Address.FullAddress);
+                    sw.WriteLine("Payment method: " + order.PaymentMethod);
+
+                    if(order.PaymentInfo != null)
+                    {
+                        sw.WriteLine("Card holder: " + order.PaymentInfo.CardHolder);
+                        sw.WriteLine("Card number: " + order.PaymentInfo.CardNumber);
+                        sw.WriteLine("Expiration date: " + order.PaymentInfo.ExpireDate.ToString("MM/yy"));
+                    }
+                    else
+                    {
+                        sw.WriteLine("Card holder: N/A");
+                        sw.WriteLine("Card number: N/A");
+                        sw.WriteLine("Expiration date: N/A");
+                    }
+
+                    MessageBox.Show($"Order details exported to {saveFileDialog.FileName}");
+                }
             }
         }
     }

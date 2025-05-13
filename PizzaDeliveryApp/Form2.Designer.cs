@@ -325,6 +325,7 @@
             exportToTxtToolStripMenuItem.Name = "exportToTxtToolStripMenuItem";
             exportToTxtToolStripMenuItem.Size = new Size(124, 25);
             exportToTxtToolStripMenuItem.Text = "Export to txt";
+            exportToTxtToolStripMenuItem.Click += exportToTxtToolStripMenuItem_Click;
             // 
             // Form2
             // 
