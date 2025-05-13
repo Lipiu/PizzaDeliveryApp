@@ -486,7 +486,7 @@ namespace PizzaDeliveryApp
                 "- Support for XML serialization and deserialization\n" +
                 "    -> CTRL+SHIFT+S - Serialization XML\n" +
                 "    -> CTRL+SHIFT+D - Deserialization XML\n" +
-                "- Option to export order to text file\n" +
+                "- Option to export order to TXT file\n" +
                 "    -> CTRL+T - Export to text file";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");

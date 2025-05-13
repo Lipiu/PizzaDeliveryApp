@@ -47,6 +47,7 @@
             xMLToolStripMenuItem = new ToolStripMenuItem();
             serializeToolStripMenuItem1 = new ToolStripMenuItem();
             deserializeToolStripMenuItem1 = new ToolStripMenuItem();
+            exportToTxtToolStripMenuItem = new ToolStripMenuItem();
             aboutAppToolStripMenuItem = new ToolStripMenuItem();
             aboutPizzaToolStripMenuItem = new ToolStripMenuItem();
             pizzaToolStripMenuItem = new ToolStripMenuItem();
@@ -54,7 +55,6 @@
             comboBoxPizzaSize = new ComboBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            exportToTxtToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -219,6 +219,15 @@
             deserializeToolStripMenuItem1.Text = "Deserialize";
             deserializeToolStripMenuItem1.Click += deserializeToolStripMenuItem1_Click;
             // 
+            // exportToTxtToolStripMenuItem
+            // 
+            exportToTxtToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exportToTxtToolStripMenuItem.Name = "exportToTxtToolStripMenuItem";
+            exportToTxtToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.T;
+            exportToTxtToolStripMenuItem.Size = new Size(124, 25);
+            exportToTxtToolStripMenuItem.Text = "Export to txt";
+            exportToTxtToolStripMenuItem.Click += exportToTxtToolStripMenuItem_Click;
+            // 
             // aboutAppToolStripMenuItem
             // 
             aboutAppToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutPizzaToolStripMenuItem, pizzaToolStripMenuItem });
@@ -278,14 +287,6 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(182, 24);
             toolStripStatusLabel1.Text = "Checkout page status";
-            // 
-            // exportToTxtToolStripMenuItem
-            // 
-            exportToTxtToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            exportToTxtToolStripMenuItem.Name = "exportToTxtToolStripMenuItem";
-            exportToTxtToolStripMenuItem.Size = new Size(124, 25);
-            exportToTxtToolStripMenuItem.Text = "Export to txt";
-            exportToTxtToolStripMenuItem.Click += exportToTxtToolStripMenuItem_Click;
             // 
             // Form1
             // 
