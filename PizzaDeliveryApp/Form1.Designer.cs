@@ -54,6 +54,7 @@
             comboBoxPizzaSize = new ComboBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            exportToTxtToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -161,7 +162,7 @@
             // 
             menuStrip1.BackColor = Color.FromArgb(255, 128, 128);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { jSONSERIALIZATIONToolStripMenuItem, xMLToolStripMenuItem, aboutAppToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { jSONSERIALIZATIONToolStripMenuItem, xMLToolStripMenuItem, exportToTxtToolStripMenuItem, aboutAppToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(784, 29);
@@ -230,14 +231,14 @@
             // aboutPizzaToolStripMenuItem
             // 
             aboutPizzaToolStripMenuItem.Name = "aboutPizzaToolStripMenuItem";
-            aboutPizzaToolStripMenuItem.Size = new Size(224, 26);
+            aboutPizzaToolStripMenuItem.Size = new Size(189, 26);
             aboutPizzaToolStripMenuItem.Text = "App features";
             aboutPizzaToolStripMenuItem.Click += aboutPizzaToolStripMenuItem_Click;
             // 
             // pizzaToolStripMenuItem
             // 
             pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            pizzaToolStripMenuItem.Size = new Size(224, 26);
+            pizzaToolStripMenuItem.Size = new Size(189, 26);
             pizzaToolStripMenuItem.Text = "Pizza info";
             pizzaToolStripMenuItem.Click += pizzaToolStripMenuItem_Click;
             // 
@@ -277,6 +278,14 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(182, 24);
             toolStripStatusLabel1.Text = "Checkout page status";
+            // 
+            // exportToTxtToolStripMenuItem
+            // 
+            exportToTxtToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exportToTxtToolStripMenuItem.Name = "exportToTxtToolStripMenuItem";
+            exportToTxtToolStripMenuItem.Size = new Size(124, 25);
+            exportToTxtToolStripMenuItem.Text = "Export to txt";
+            exportToTxtToolStripMenuItem.Click += exportToTxtToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -339,5 +348,6 @@
         private ToolStripMenuItem xMLToolStripMenuItem;
         private ToolStripMenuItem serializeToolStripMenuItem1;
         private ToolStripMenuItem deserializeToolStripMenuItem1;
+        private ToolStripMenuItem exportToTxtToolStripMenuItem;
     }
 }

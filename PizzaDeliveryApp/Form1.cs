@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace PizzaDeliveryApp
@@ -256,6 +257,58 @@ namespace PizzaDeliveryApp
             else
             {
                 MessageBox.Show("No saved pizza order found!");
+            }
+        }
+
+        private void exportToTxtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text File | *.txt";
+            saveFileDialog.Title = "Save as text file";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = File.CreateText(saveFileDialog.FileName))
+                {
+                    Pizza pizza = new Pizza()
+                    {
+                        TypeOfPizza = comboBoxPizzaChoice.Text,
+                        PizzaSize = comboBoxPizzaSize.Text,
+                        HasKetchup = checkBoxKetchup.Checked,
+                        SpicyKetchup = checkBoxSpicy.Checked
+                    };
+
+                    sw.WriteLine("Pizza Order Summary");
+                    sw.WriteLine("--------------------");
+                    sw.WriteLine("Pizza type: " + pizza.TypeOfPizza);
+                    sw.WriteLine("Pizza size: " + pizza.PizzaSize);
+                    if (pizza.HasKetchup)
+                    {
+                        sw.WriteLine("Ketchup: Yes");
+                    }
+                    else
+                    {
+                        sw.WriteLine("Ketchup: No");
+                    }
+
+                    if (pizza.HasKetchup)
+                    {
+                        if(pizza.SpicyKetchup)
+                        {
+                            sw.WriteLine("Spicy ketchup: Yes");
+                        }
+                        else
+                        {
+                            sw.WriteLine("Spicy ketchup: No");
+                        }
+                    }
+                    else
+                    {
+                        sw.WriteLine("Spicy ketchup: N/A");
+                    }
+
+                    MessageBox.Show($"Order details exported to {saveFileDialog.FileName}");
+                }
             }
         }
     }
