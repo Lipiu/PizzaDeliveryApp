@@ -55,6 +55,8 @@
             comboBoxPizzaSize = new ComboBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            label1 = new Label();
+            textBoxNumberOfPizza = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPizza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -105,7 +107,7 @@
             // labelKetchup
             // 
             labelKetchup.AutoSize = true;
-            labelKetchup.Location = new Point(12, 356);
+            labelKetchup.Location = new Point(12, 406);
             labelKetchup.Name = "labelKetchup";
             labelKetchup.Size = new Size(97, 28);
             labelKetchup.TabIndex = 4;
@@ -114,7 +116,7 @@
             // checkBoxKetchup
             // 
             checkBoxKetchup.AutoSize = true;
-            checkBoxKetchup.Location = new Point(155, 356);
+            checkBoxKetchup.Location = new Point(178, 402);
             checkBoxKetchup.Name = "checkBoxKetchup";
             checkBoxKetchup.Size = new Size(65, 32);
             checkBoxKetchup.TabIndex = 5;
@@ -126,7 +128,7 @@
             // checkBoxSpicy
             // 
             checkBoxSpicy.AutoSize = true;
-            checkBoxSpicy.Location = new Point(155, 389);
+            checkBoxSpicy.Location = new Point(178, 435);
             checkBoxSpicy.Name = "checkBoxSpicy";
             checkBoxSpicy.Size = new Size(165, 32);
             checkBoxSpicy.TabIndex = 6;
@@ -139,7 +141,7 @@
             // 
             button1.BackColor = Color.FromArgb(255, 128, 128);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(12, 463);
+            button1.Location = new Point(12, 493);
             button1.Name = "button1";
             button1.Size = new Size(175, 35);
             button1.TabIndex = 7;
@@ -150,7 +152,7 @@
             // checkBoxNoKetchup
             // 
             checkBoxNoKetchup.AutoSize = true;
-            checkBoxNoKetchup.Location = new Point(244, 356);
+            checkBoxNoKetchup.Location = new Point(267, 402);
             checkBoxNoKetchup.Name = "checkBoxNoKetchup";
             checkBoxNoKetchup.Size = new Size(55, 32);
             checkBoxNoKetchup.TabIndex = 8;
@@ -288,11 +290,29 @@
             toolStripStatusLabel1.Size = new Size(182, 24);
             toolStripStatusLabel1.Text = "Checkout page status";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 355);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 28);
+            label1.TabIndex = 13;
+            label1.Text = "How many?";
+            // 
+            // textBoxNumberOfPizza
+            // 
+            textBoxNumberOfPizza.Location = new Point(178, 348);
+            textBoxNumberOfPizza.Name = "textBoxNumberOfPizza";
+            textBoxNumberOfPizza.Size = new Size(152, 35);
+            textBoxNumberOfPizza.TabIndex = 14;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(255, 128, 128);
             ClientSize = new Size(784, 561);
+            Controls.Add(textBoxNumberOfPizza);
+            Controls.Add(label1);
             Controls.Add(statusStrip1);
             Controls.Add(comboBoxPizzaSize);
             Controls.Add(labelSize);
@@ -350,5 +370,7 @@
         private ToolStripMenuItem serializeToolStripMenuItem1;
         private ToolStripMenuItem deserializeToolStripMenuItem1;
         private ToolStripMenuItem exportToTxtToolStripMenuItem;
+        private TextBox textBoxNumberOfPizza;
+        private Label label1;
     }
 }

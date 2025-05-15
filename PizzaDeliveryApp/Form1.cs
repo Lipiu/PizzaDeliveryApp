@@ -197,7 +197,8 @@ namespace PizzaDeliveryApp
                 "    -> CTRL+SHIFT+S - Serialization XML\n" +
                 "    -> CTRL+SHIFT+D - Deserialization XML\n" +
                 "- Option to export order to TXT file\n" +
-                "    -> CTRL+T - Export to text file";
+                "    -> CTRL+T - Export to text file\n" +
+                "- Data is saved in JSON files, XML files and in SQLite database";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
         }
@@ -206,6 +207,7 @@ namespace PizzaDeliveryApp
         {
             string aboutText = "- Different types of pizza.\n" +
                                "- For now the prices are related to the size Large.\n" +
+                               "- For now, in section 'How many' you can select multiple pizzas of the same type\n" +
                                "- By default ketchup selection is set to false.\n" +
                                "- Very tasty!";
 
