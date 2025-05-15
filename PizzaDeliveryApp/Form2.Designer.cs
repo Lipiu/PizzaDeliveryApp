@@ -60,8 +60,8 @@
             xMLToolStripMenuItem = new ToolStripMenuItem();
             serializeXML = new ToolStripMenuItem();
             deserializeXML = new ToolStripMenuItem();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
             exportToTxtToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             contextMenuStrip1.SuspendLayout();
@@ -322,14 +322,6 @@
             deserializeXML.Text = "Deserialize";
             deserializeXML.Click += deserializeXML_Click;
             // 
-            // aboutToolStripMenuItem
-            // 
-            aboutToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(67, 25);
-            aboutToolStripMenuItem.Text = "About";
-            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
-            // 
             // exportToTxtToolStripMenuItem
             // 
             exportToTxtToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -338,6 +330,14 @@
             exportToTxtToolStripMenuItem.Size = new Size(124, 25);
             exportToTxtToolStripMenuItem.Text = "Export to txt";
             exportToTxtToolStripMenuItem.Click += exportToTxtToolStripMenuItem_Click;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(67, 25);
+            aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // Form2
             // 
