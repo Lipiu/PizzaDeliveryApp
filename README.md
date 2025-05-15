@@ -1,8 +1,8 @@
 # Lipiu's pizza store form
-## Overview
+## Overview:
 ### This is an interactive windows form app that allows users to order pizza!
 ##
-## Features
+## Features:
 `Support`
 * Support for `JSON` serialization/deserialization.
 * Support for `XML` serialization/deserialization.
@@ -22,3 +22,9 @@ Each form has an about section:
 ## How the data is stored (in progress)
 The user data will be stored in an SQLite database.
  * The data can also be stored in a TXT file.
+
+##
+## Tools used:
+* `Visual Studio Code`
+* `C#`
+* `SQLite`
