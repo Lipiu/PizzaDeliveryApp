@@ -97,6 +97,7 @@ namespace PizzaDeliveryApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //validating pizza choice
             if (comboBoxPizzaChoice.SelectedItem == null)
             {
                 errorProvider1.SetError(comboBoxPizzaChoice, "Please select a pizza or just say you hate me.");
@@ -104,6 +105,15 @@ namespace PizzaDeliveryApp
             else if (comboBoxPizzaSize.SelectedItem == null)
             {
                 errorProvider1.SetError(comboBoxPizzaSize, "Please select size of pizza!");
+            }
+            //validating number of pizzas
+            if (string.IsNullOrEmpty(textBoxNumberOfPizza.Text))
+            {
+                errorProvider1.SetError(textBoxNumberOfPizza, "This field cannot be left empty.");
+            }
+            else if (!textBoxNumberOfPizza.Text.All(char.IsDigit))
+            {
+                errorProvider1.SetError(textBoxNumberOfPizza, "Please enter only numbers.");
             }
             else
             {
