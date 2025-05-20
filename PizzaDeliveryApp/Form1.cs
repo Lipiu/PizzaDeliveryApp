@@ -106,15 +106,6 @@ namespace PizzaDeliveryApp
             {
                 errorProvider1.SetError(comboBoxPizzaSize, "Please select size of pizza!");
             }
-            //validating number of pizzas
-            if (string.IsNullOrEmpty(textBoxNumberOfPizza.Text))
-            {
-                errorProvider1.SetError(textBoxNumberOfPizza, "This field cannot be left empty.");
-            }
-            else if (!textBoxNumberOfPizza.Text.All(char.IsDigit))
-            {
-                errorProvider1.SetError(textBoxNumberOfPizza, "Please enter only numbers.");
-            }
             else
             {
                 Pizza pizza = new Pizza();
@@ -176,6 +167,7 @@ namespace PizzaDeliveryApp
                         checkBoxKetchup.Checked = pizza.HasKetchup;
                         checkBoxSpicy.Checked = pizza.SpicyKetchup;
                         comboBoxPizzaSize.SelectedItem = pizza.PizzaSize;
+
 
                         MessageBox.Show("Pizza order deserialized(json) successfully!");
                     }
@@ -265,6 +257,7 @@ namespace PizzaDeliveryApp
                     checkBoxKetchup.Checked = pizza.HasKetchup;
                     checkBoxSpicy.Checked = pizza.SpicyKetchup;
 
+
                     MessageBox.Show("Deserialized from XML!");
                 }
             }
@@ -289,7 +282,7 @@ namespace PizzaDeliveryApp
                         TypeOfPizza = comboBoxPizzaChoice.Text,
                         PizzaSize = comboBoxPizzaSize.Text,
                         HasKetchup = checkBoxKetchup.Checked,
-                        SpicyKetchup = checkBoxSpicy.Checked
+                        SpicyKetchup = checkBoxSpicy.Checked,
                     };
 
                     sw.WriteLine("Pizza Order Summary");
