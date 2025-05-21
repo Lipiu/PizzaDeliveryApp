@@ -209,7 +209,6 @@ namespace PizzaDeliveryApp
         {
             string aboutText = "- Different types of pizza.\n" +
                                "- For now the prices are related to the size Large.\n" +
-                               "- For now, in section 'How many' you can select multiple pizzas of the same type\n" +
                                "- By default ketchup selection is set to false.\n" +
                                "- Very tasty!";
 

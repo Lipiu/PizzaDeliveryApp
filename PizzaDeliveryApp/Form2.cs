@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -11,15 +13,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
+
 namespace PizzaDeliveryApp
 {
     public partial class Form2 : Form
     {
+        private List<Pizza> pizzas;
+        private const string ConnectionString = "Data Source=databasepaw.db";
+
         public Form2(Pizza pizza)
         {
             InitializeComponent();
             this.pizza = pizza;
+            
+
+
             errorProvider1 = new ErrorProvider();
+        }
+
+        public Form2(List<Pizza> pizzas)
+        {
+            this.pizzas = pizzas;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -173,8 +187,70 @@ namespace PizzaDeliveryApp
             }
 
 
-            //if all fields are valid display message
-            MessageBox.Show("Order placed sucessfully!\nThank you and enjoy your pizza!!");
+            //if all fields are valid store in database and display message
+            try
+            {
+                string connectionString = "Data Source=databasepaw.db;Version=3;";
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"INSERT INTO OrderDetails 
+                (Name, PhoneNumber, Address, PaymentMethod, CardHolder, CardNumber, ExpireDate, CVV) 
+                VALUES (@Name, @Phone, @Address, @PaymentMethod, @CardHolder, @CardNumber, @ExpiryDate, @CVV)";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", textBoxName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Phone", textBoxPhoneNumber.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Address", textBoxAddress.Text.Trim());
+
+                        string paymentMethod = checkBoxCard.Checked ? "Card" : "Cash";
+                        cmd.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
+
+                        cmd.Parameters.AddWithValue("@CardHolder", checkBoxCard.Checked ? textBoxCardHolder.Text.Trim() : null);
+                        cmd.Parameters.AddWithValue("@CardNumber", checkBoxCard.Checked ? textBoxCardNumber.Text.Trim() : null);
+                        cmd.Parameters.AddWithValue("@ExpiryDate", checkBoxCard.Checked ? textBoxExpDate.Text.Trim() : null);
+                        cmd.Parameters.AddWithValue("@CVV", checkBoxCard.Checked ? textBoxCvv.Text.Trim() : null);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+                }
+                string paymentMethod1 = "";
+                if (checkBoxCard.Checked)
+                {
+                    paymentMethod1 = "Card";
+                }
+                else if (checkBoxCash.Checked)
+                {
+                    paymentMethod1 = "Cash";
+                }
+                else
+                {
+                    paymentMethod1 = "Unknown";
+                }
+                string message = $"Order placed successfully and saved to database!\n\n" +
+                     $"Name: {textBoxName.Text}\n" +
+                     $"Phone: {textBoxPhoneNumber.Text}\n" +
+                     $"Address: {textBoxAddress.Text}\n" +
+                     $"Payment Method: {paymentMethod1}\n";
+
+                if (checkBoxCard.Checked)
+                {
+                    message += $"Card Holder: {textBoxCardHolder}\n" +
+                               $"Card Number: {textBoxCardNumber}\n" +
+                               $"Expiry Date: {textBoxExpDate}\n" +
+                               $"CVV: {textBoxCvv}";
+                }
+
+                MessageBox.Show("Order placed sucessfully!\nThank you and enjoy your pizza!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving order to database:\n" + ex.Message);
+            }
         }
 
         private void textBoxAddress_TextChanged(object sender, EventArgs e)
@@ -490,6 +566,11 @@ namespace PizzaDeliveryApp
                 "    -> CTRL+T - Export to text file";
 
             MessageBox.Show(aboutText, "About pizzaDeliveryApp");
+        }
+
+        private void listViewOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
