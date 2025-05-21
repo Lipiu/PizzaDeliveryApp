@@ -26,5 +26,6 @@ The user data will be stored in an SQLite database.
 ##
 ## Tools used:
 * `Visual Studio Code`
+* `NuGet Package Manager`
 * `C#`
 * `SQLite`
