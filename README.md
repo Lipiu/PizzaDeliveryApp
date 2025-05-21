@@ -1,6 +1,6 @@
 # Lipiu's pizza store form
 ## Overview:
-### This is an interactive windows form app that allows users to order pizza!
+This is an interactive windows form app that allows users to order pizza!
 ##
 ## Features:
 `Support`
@@ -19,7 +19,7 @@ Each form has an about section:
   * `About` --> Info about the second form (checkout) and the shortcuts the user can use.
 
 ##
-## How the data is stored (in progress)
+## How the data is stored
 The user data will be stored in an SQLite database.
  * The data can also be stored in a TXT file.
 
