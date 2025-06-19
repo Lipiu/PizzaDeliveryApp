@@ -3,6 +3,8 @@
 This is an interactive windows form app that allows users to order pizza!
 ##
 ![image](https://github.com/user-attachments/assets/61c91a14-874f-422c-8ba6-e5f3e78b50db)
+![image](https://github.com/user-attachments/assets/7d4697be-b2f1-40c4-a642-904945bff91e)
+
 
 ## Features:
 `Support`
